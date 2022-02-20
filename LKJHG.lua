@@ -9258,18 +9258,18 @@ data = {
 {text = 'Channel Source ،', url = 'https://t.me/U9908'}, 
 },
 {
-{text = 'Annotations Source', url = 'https://t.me/U9908'}, 
+{text = 'Annotations Source', url = 'https://t.me/U9907'}, 
 },
 {
 {text = 'Communication Source', url = 't.me/U9908'}, 
 },
 {
-{text = 'Developer Source !', url = 't.me/vv3oo'}, 
+{text = 'Dev Source !', url = 't.me/vv3oo'}, 
 },
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id, [[
-*⌔︙Source LKJHG *
+*⌔︙Source Alex *
 ••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••
 ]],"md",false, false, false, false, reply_markup)
 elseif text == 'الاوامر' then
@@ -9489,19 +9489,19 @@ if text == (Redis:get(LKJHG.."LKJHG:Name:Bot") or "ليكس") then
 local NamesBot = (Redis:get(LKJHG.."LKJHG:Name:Bot") or "ليكس")
 local NameBots = {
 "عمر "..NamesBot.. " شتريد؟",
-"أჂ̤ أჂ̤ هياتني اني",
+"امر خدمه ؟",
 "موجود بس لتصيح",
-"لتــلح دا احجي ويه بنات سكر بعدين اجاوبك",
-"راح نموت بكورونا ونته بعدك تصيح "..NamesBot,
-'يمعود والله نعسان'
+"طامس وي اختك ",
+"يروحح "..NamesBot,
+'هاا سيدد'
 }
 return LuaTele.sendText(msg_chat_id,msg_id, NameBots[math.random(#NameBots)],"md",true)  
 end
 if text == "بوت" then
 local NamesBot = (Redis:get(LKJHG.."LKJHG:Name:Bot") or "ليكس")
 local BotName = {
-"باوع لك خليني احبك وصيحلي باسمي "..NamesBot,
-"لتخليني ارجع لحركاتي لقديمه وردا ترا اسمي "..NamesBot.. ""
+"لتلح كتلك اسمي "..NamesBot,
+" وردا ترا اسمي "..NamesBot.. ""
 }
 return LuaTele.sendText(msg_chat_id,msg_id,BotName[math.random(#BotName)],"md",true)   
 end
@@ -9948,16 +9948,34 @@ Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'اد', '�
 Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'مد','رفع مدير')
 Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'من', 'رفع منشئ')
 Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'اس', 'رفع منشئ اساسي')
+Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'مط', 'رفع مطور')
+Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'غ', 'غنيلي')
+Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'ر', 'الرابط')
+Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'رد', 'اضف رد')
+Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'تك', 'تنزيل الكل')
+Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'رس', 'مسح رسائلي')
+Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'سح', 'مسح سحكاتي')
+Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'ثانوي', 'رفع مطور ثانوي')
 return LuaTele.sendText(msg_chat_id,msg_id,[[*
-⌔︙تم ترتيب الاوامر بالشكل التالي •
-- ايدي - ا •
-- مميز - م •
-- ادمن - اد •
-- مدير - مد • 
-- منشى - من •
-- المنشئ الاساسي - اس  •
-- تعطيل الايدي بالصوره - تعط •
-- تفعيل الايدي بالصوره - تفع •
+⌔︙تم ترتيب الاوامر بالشكل التالي 
+⌔︙تعطيل الايدي بالصوره - تعط
+⌔︙تفعيل الايدي بالصوره - تفع
+⌔︙رفع منشئ الاساسي - اس
+⌔︙رفع مطور ثانوي - ثانوي
+⌔︙مسح المكتومين - ،،
+⌔︙مسح سحكاتي - سح
+⌔︙مسح رسائلي - رس
+⌔︙تنزيل الكل - تك
+⌔︙ردود المدير - رر
+⌔︙رفع منشى - من
+⌔︙رفع مطور - مط
+⌔︙رفع مدير - مد
+⌔︙رفع ادمن - اد
+⌔︙رفع مميز - م
+⌔︙اضف رد - رد
+⌔︙غنيلي - غ
+⌔︙الرابط - ر
+⌔︙ايدي - ا
 *]],"md")
 end
 
