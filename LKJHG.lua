@@ -7926,7 +7926,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'قناه السورس', url = 't.me/U9908'}, 
+{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
 },
 }
 }
@@ -9284,29 +9284,30 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝟏 }', data = msg.sender.user_id..'/help1'}, {text = '{ 𝟐 }', data = msg.sender.user_id..'/help2'}, 
+{text = ' 𝟏 ', data = msg.sender.user_id..'/help1'}, {text = ' 𝟐 ', data = msg.sender.user_id..'/help2'}, 
 },
 {
-{text = '{ 𝟑 }', data = msg.sender.user_id..'/help3'}, {text = '{ 𝟒 }', data = msg.sender.user_id..'/help4'}, 
+{text = ' 𝟑 ', data = msg.sender.user_id..'/help3'}, {text = ' 𝟒 ', data = msg.sender.user_id..'/help4'}, 
 },
 {
-{text = '{ 𝟓 }', data = msg.sender.user_id..'/help5'}, {text = '{ الالعاب }', data = msg.sender.user_id..'/help6'}, {text = '{ التسليه }', data = msg.sender.user_id..'/help7'}, 
+{text = ' 𝟓 ', data = msg.sender.user_id..'/help5'}, {text = ' الالعاب ', data = msg.sender.user_id..'/help6'}, {text = ' التسليه ', data = msg.sender.user_id..'/help7'}, 
 },
 {
 {text = '{ اوامر القفل / الفتح }', data = msg.sender.user_id..'/NoNextSeting'}, {text = '{ اوامر التعطيل / التفعيل }', data = msg.sender.user_id..'/listallAddorrem'}, 
 },
 {
-{text = 'قناه السورس', url = 't.me/U9908'}, 
+{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
 },
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id, [[*
-⌔︙توجد ← 5 اوامر في البوت
+⌔︙توجد ← 6 اوامر في البوت
 ••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••
-⌔︙ارسل { م1 } ← اوامر الحمايه
-⌔︙ارسل { م2 } ← اوامر الادمنيه
-⌔︙ارسل { م3 } ← اوامر المدراء
-⌔︙ارسل { م4 } ← اوامر المنشئين
+⌔︙{ 1 } ← الحمايه
+⌔︙{ 2 } ←  الادمنيه
+⌔︙{ 3 } ← المدراء
+⌔︙{ 4 } ← المنشئين
+⌔︙{ 6 } ←  التسليه
 ⌔︙ارسل { م5 } ← اوامر مطورين البوت
 *]],"md",false, false, false, false, reply_markup)
 elseif text == 'م1' then
@@ -10826,24 +10827,24 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝟏 }', data = IdUser..'/help1'}, {text = '{ 𝟐 }', data = IdUser..'/help2'}, 
+{text = ' 𝟏 ', data = IdUser..'/help1'}, {text = ' 𝟐 ', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝟑 }', data = IdUser..'/help3'}, {text = '{ 𝟒 }', data = IdUser..'/help4'}, 
+{text = ' 𝟑 ', data = IdUser..'/help3'}, {text = ' 𝟒 ', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝟓 }', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, {text = '{ التسليه }', data = IdUser..'/help7'}, 
+{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = ' الالعاب ', data = IdUser..'/help6'}, {text = ' التسليه ', data = IdUser..'/help7'}, 
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = ' القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = 'قناه السورس', url = 't.me/U9908'}, 
+{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
 },
 }
 }
 local TextHelp = [[*
-⌔︙اوامر الحمايه اتبع مايلي ...
+⌔︙اوامر الحمايه  
 ••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••
 ⌔︙قفل ، فتح ← الامر 
 ⌔︙تستطيع قفل حمايه كما يلي ...
@@ -10858,7 +10859,6 @@ local TextHelp = [[*
 ⌔︙المتحركه
 ⌔︙الملفات
 ⌔︙الصور
-••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••
 ⌔︙الماركداون
 ⌔︙البوتات
 ⌔︙التكرار
@@ -10868,7 +10868,6 @@ local TextHelp = [[*
 ⌔︙الفيديو
 ⌔︙الانلاين
 ⌔︙الدردشه
-••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••
 ⌔︙التوجيه
 ⌔︙الاغاني
 ⌔︙الصوت
@@ -10884,19 +10883,19 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝟏 }', data = IdUser..'/help1'}, {text = '{ 𝟐 }', data = IdUser..'/help2'}, 
+{text = ' 𝟏 ', data = IdUser..'/help1'}, {text = ' 𝟐 ', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝟑 }', data = IdUser..'/help3'}, {text = '{ 𝟒 }', data = IdUser..'/help4'}, 
+{text = ' 𝟑 ', data = IdUser..'/help3'}, {text = ' 𝟒 ', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝟓 }', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, {text = '{ التسليه }', data = IdUser..'/help7'}, 
+{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = ' الالعاب ', data = IdUser..'/help6'}, {text = ' التسليه ', data = IdUser..'/help7'}, 
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = ' القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = 'قناه السورس', url = 't.me/U9908'}, 
+{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
 },
 }
 }
@@ -10943,19 +10942,19 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝟏 }', data = IdUser..'/help1'}, {text = '{ 𝟐 }', data = IdUser..'/help2'}, 
+{text = ' 𝟏 ', data = IdUser..'/help1'}, {text = ' 𝟐 ', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝟑 }', data = IdUser..'/help3'}, {text = '{ 𝟒 }', data = IdUser..'/help4'}, 
+{text = ' 𝟑 ', data = IdUser..'/help3'}, {text = ' 𝟒 ', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝟓 }', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, {text = '{ التسليه }', data = IdUser..'/help7'}, 
+{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = ' الالعاب ', data = IdUser..'/help6'}, {text = ' التسليه ', data = IdUser..'/help7'}, 
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = ' القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = 'قناه السورس', url = 't.me/U9908'}, 
+{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
 },
 }
 }
@@ -10996,19 +10995,19 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝟏 }', data = IdUser..'/help1'}, {text = '{ 𝟐 }', data = IdUser..'/help2'}, 
+{text = ' 𝟏 ', data = IdUser..'/help1'}, {text = ' 𝟐 ', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝟑 }', data = IdUser..'/help3'}, {text = '{ 𝟒 }', data = IdUser..'/help4'}, 
+{text = ' 𝟑 ', data = IdUser..'/help3'}, {text = ' 𝟒 ', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝟓 }', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, {text = '{ التسليه }', data = IdUser..'/help7'}, 
+{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = ' الالعاب ', data = IdUser..'/help6'}, {text = ' التسليه ', data = IdUser..'/help7'}, 
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = ' القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = 'قناه السورس', url = 't.me/U9908'}, 
+{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
 },
 }
 }
@@ -11036,19 +11035,19 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝟏 }', data = IdUser..'/help1'}, {text = '{ 𝟐 }', data = IdUser..'/help2'}, 
+{text = ' 𝟏 ', data = IdUser..'/help1'}, {text = ' 𝟐 ', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝟑 }', data = IdUser..'/help3'}, {text = '{ 𝟒 }', data = IdUser..'/help4'}, 
+{text = ' 𝟑 ', data = IdUser..'/help3'}, {text = ' 𝟒 ', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝟓 }', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, {text = '{ التسليه }', data = IdUser..'/help7'}, 
+{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = ' الالعاب ', data = IdUser..'/help6'}, {text = ' التسليه ', data = IdUser..'/help7'}, 
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = ' القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = 'قناه السورس', url = 't.me/U9908'}, 
+{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
 },
 }
 }
@@ -11091,24 +11090,24 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝟏 }', data = IdUser..'/help1'}, {text = '{ 𝟐 }', data = IdUser..'/help2'}, 
+{text = ' 𝟏 ', data = IdUser..'/help1'}, {text = ' 𝟐 ', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝟑 }', data = IdUser..'/help3'}, {text = '{ 𝟒 }', data = IdUser..'/help4'}, 
+{text = ' 𝟑 ', data = IdUser..'/help3'}, {text = ' 𝟒 ', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝟓 }', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, {text = '{ التسليه }', data = IdUser..'/help7'}, 
+{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = ' الالعاب ', data = IdUser..'/help6'}, {text = ' التسليه ', data = IdUser..'/help7'}, 
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = ' القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = 'قناه السورس', url = 't.me/U9908'}, 
+{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
 },
 }
 }
 local TextHelp = [[*
-⌔︙قائمه الالعاب البوت
+⌔︙قائمه الالعاب 
 ••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••
 ⌔︙لعبة المختلف » المختلف
 ⌔︙لعبة الامثله » امثله
@@ -11123,8 +11122,6 @@ local TextHelp = [[*
 ⌔︙لعبة الرياضيات » رياضيات
 ⌔︙لعبة الانكليزي » انكلش
 ••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••
-⌔︙مجوهراتي ← لعرض عدد الارباح
-⌔︙بيع مجوهراتي ← { العدد } ← لبيع كل مجوهره مقابل {50} رساله
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -11135,19 +11132,19 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝟏 }', data = IdUser..'/help1'}, {text = '{ 𝟐 }', data = IdUser..'/help2'}, 
+{text = ' 𝟏 ', data = IdUser..'/help1'}, {text = ' 𝟐 ', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝟑 }', data = IdUser..'/help3'}, {text = '{ ?? }', data = IdUser..'/help4'}, 
+{text = ' 𝟑 ', data = IdUser..'/help3'}, {text = ' 𝟒 ', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝟓 }', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, {text = '{ التسليه }', data = IdUser..'/help7'}, 
+{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, {text = '{ التسليه }', data = IdUser..'/help7'}, 
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = ' القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = 'قناه السورس', url = 't.me/U9908'}, 
+{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
 },
 }
 }
@@ -11166,24 +11163,6 @@ local TextHelp = [[*
 ⌔︙تاج
 ⌔︙نبي
 ⌔︙تويكس 
-••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉•• 
-⌔︙ قائمه الالعاب الموجوده
-••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉•• 
-⌔︙ لعبة البات » بات
-⌔︙لعبة الامثله » امثله
-⌔︙لعبة التخمين » خمن
-⌔︙لعبه الاسرع » الاسرع
-⌔︙ لعبة العكس » العكس 
-⌔︙لعبة المعاني » معاني
-⌔︙لعبة الحزوره » حزوره
-⌔︙لعبة السمايلات » سمايلات
-⌔︙لعبة المختلف » المختلف
-⌔︙ لعبة الاسئله » كت تويت
-⌔︙ لعبة انكليزي » انكليزي
-⌔︙ لعبة رياضيات » رياضيات
-••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉•• 
-⌔︙مجوهراتي -› لعرض عدد الارباح
-⌔︙بيع مجوهراتي + العدد -› لستبدال كل مجوهره ب50 رساله
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -11194,31 +11173,31 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝟏 }', data = IdUser..'/help1'}, {text = '{ 𝟐 }', data = IdUser..'/help2'}, 
+{text = ' 𝟏 ', data = IdUser..'/help1'}, {text = ' 𝟐 ', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝟑 }', data = IdUser..'/help3'}, {text = '{ 𝟒 }', data = IdUser..'/help4'}, 
+{text = ' 𝟑 ', data = IdUser..'/help3'}, {text = ' 𝟒 ', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝟓 }', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, {text = '{ التسليه }', data = IdUser..'/help7'}, 
+{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = ' الالعاب ', data = IdUser..'/help6'}, {text = ' التسليه ', data = IdUser..'/help7'}, 
 },
 {
-{text = '{ اوامر القفل / الفتح }', data = IdUser..'/NoNextSeting'}, {text = '{ اوامر التعطيل / التفعيل }', data = IdUser..'/listallAddorrem'}, 
+{text = ' اوامر القفل / الفتح ', data = IdUser..'/NoNextSeting'}, {text = ' اوامر التعطيل / التفعيل ', data = IdUser..'/listallAddorrem'}, 
 },
 {
-{text = 'قناه السورس', url = 't.me/U9908'}, 
+{text = ' 𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺 ', url = 't.me/U9908'}, 
 },
 }
 }
 local TextHelp = [[*
-⌔︙توجد ← 5 اوامر في البوت
+⌔︙توجد ← 6 اوامر في البوت
 ••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••
-⌔︙ارسل { م1 } ← اوامر الحمايه
-⌔︙ارسل { م2 } ← اوامر الادمنيه
-⌔︙ارسل { م3 } ← اوامر المدراء
-⌔︙ارسل { م4 } ← اوامر المنشئين
-⌔︙ارسل { م5 } ← اوامر مطورين البوت
-⌔︙ارسل { م6 } ← اوامر التسليه
+⌔︙ { 1 } ←  الحمايه
+⌔︙ { 2 } ←  الادمنيه
+⌔︙ { 3 } ←  المدراء
+⌔︙ { 4 } ←  المنشئين
+⌔︙ { 5 } ←  مطورين البوت
+⌔︙ { 6 } ←  التسليه
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
