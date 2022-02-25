@@ -2315,8 +2315,8 @@ if text == 'تحديث السورس' or text == 'تحديث السورس ⌔' th
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
---os.execute('rm -rf LKJHG.lua')
---download('https://raw.githubusercontent.com/ssssxsssxdfs/LKJHG/master/LKJHG.lua','LKJHG.lua')
+os.execute('rm -rf LKJHG.lua')
+download('https://raw.githubusercontent.com/ssssxsssxdfs/LKJHG/master/LKJHG.lua','LKJHG.lua')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙تم تحديث السورس * ',"md",true)  
 end
 if text == 'جلب النسخه الاحتياطيه ⌔' or text == 'جلب نسخه احتياطيه' then
@@ -8516,6 +8516,18 @@ local Text ='*✯︙تم اختيار الاغنيه لك*'
 local MsgId = msg.id/2097152/0.5
 local MSGID = string.gsub(MsgId,'.0','')
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/TEAMSUL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown") 
+end
+
+if text == "متحركه" or text == "مت" then 
+
+Abs = math.random(2,1075); 
+
+local Text ='*✯︙تم اختيار المتحركه لك*'
+
+local MsgId = msg.id/2097152/0.5
+
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/GifDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown")
 end
 if text and text:match("^مسح (.*)$") and msg.reply_to_message_id == 0 then
 local TextMsg = text:match("^مسح (.*)$")
