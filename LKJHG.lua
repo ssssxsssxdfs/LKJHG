@@ -9253,7 +9253,8 @@ end
 Redis:del(LKJHG..'LKJHG:Texting:DevLKJHG')
 return LuaTele.sendText(msg_chat_id,msg_id,'⌔︙ تم حذف كليشه المطور')
 end
-if text == 'المطور' or text == 'مطور' then
+
+if text == 'المطور' or text == 'مطور البوت' then
 local LinkGroup = LuaTele.generateChatInviteLink(msg_chat_id,'taha',tonumber(msg.date+864000),100,false)
 if LinkGroup.code ~= 3 then
 LuaTele.sendText(Sudo_Id,0,'\n*⌔︙مطور البوت يصيحك واحد هنا* ['..LinkGroup.invite_link..']',"md",true)  
@@ -9262,36 +9263,50 @@ local TextingDevLKJHG = Redis:get(LKJHG..'LKJHG:Texting:DevLKJHG')
 if TextingDevLKJHG then 
 return LuaTele.sendText(msg_chat_id,msg_id,TextingDevLKJHG,"md",true)  
 else
-local UserInfo = LuaTele.getUser(Sudo_Id)
-for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
-UserInfo.first_name = Name_User
-break
-end 
-LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙مطور البوت : {*['..UserInfo.first_name..'](tg://user?id='..UserInfo.id..')*}*',"md",true)  
-end
-end
-if text == 'السورس' or text == 'سورس' or text == 'ياسورس'  then
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
+local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
+if photo.total_count > 0 then
+local ban = LuaTele.getUser(Sudo_Id)
+local T = '⌔︙ Name : *['..ban.username..'](tg://user?id='..ban.id..')*\n*'
+keyboard = {} 
+keyboard.inline_keyboard = {
 {
-{text = 'Channel Source ،', url = 'https://t.me/U9908'}, 
-},
-{
-{text = 'Annotations Source', url = 'https://t.me/U9907'}, 
-},
-{
-{text = 'Communication Source', url = 't.me/U9908'}, 
-},
-{
-{text = 'Dev Source !', url = 't.me/vv3oo'}, 
+{text = ''..ban.first_name..'', url = "t.me/"..ban.username..""}
 },
 }
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ◉ مطور البوت : {*['..ban.first_name..'](tg://user?id='..ban.id..')*}*',"md",true)  
+end
+end
+end
+if text == "مبرمج السورس" or text == "مطور السورس" or text == "وين المبرمج" or text == "المبرمج" or text == "˓ مبرمج السورس ⌔" then 
+Text = [[
+⌔︰[مبرمج السورس](https://t.me/vv3oo)
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'Dev Source !', url = "https://t.me/vv3oo"}
+},
 }
-return LuaTele.sendText(msg_chat_id,msg_id, [[
-*⌔︙Source Alex *
-••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••
-]],"md",false, false, false, false, reply_markup)
+local MsgId = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/vv3oo&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+elseif text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'source' then
+photo = "https://t.me/U9908"
+local T =[[⌔︙Welcome To Source Alex team .
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = "https://t.me/U9908"},{text = 'A𝗹𝗲𝘅 𝖴𝗉𝖽𝖺𝖳𝖾𝖲', url = "https://t.me/U9907"}
+},
+{
+{text = '𝗧𝘄𝘀 Source', url = "https://t.me/vv3vvbot"}
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'الاوامر' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
