@@ -9255,10 +9255,6 @@ return LuaTele.sendText(msg_chat_id,msg_id,'⌔︙ تم حذف كليشه الم
 end
 
 if text == 'المطور' or text == 'مطور البوت' then
-local LinkGroup = LuaTele.generateChatInviteLink(msg_chat_id,'taha',tonumber(msg.date+864000),100,false)
-if LinkGroup.code ~= 3 then
-LuaTele.sendText(Sudo_Id,0,'\n*⌔︙مطور البوت يصيحك واحد هنا* ['..LinkGroup.invite_link..']',"md",true)  
-end
 local TextingDevLKJHG = Redis:get(LKJHG..'LKJHG:Texting:DevLKJHG')
 if TextingDevLKJHG then 
 return LuaTele.sendText(msg_chat_id,msg_id,TextingDevLKJHG,"md",true)  
@@ -9266,7 +9262,7 @@ else
 local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
 if photo.total_count > 0 then
 local ban = LuaTele.getUser(Sudo_Id)
-local T = '⌔︙ Name : *['..ban.username..'](tg://user?id='..ban.id..')*\n*'
+local T = '* ❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓𝒔 𝑩𝒐𝒕 ❳\n— — — — — — — — —\n‹ : 𝑫𝒆𝒗 𝑵𝒂𝒎𝒆 : *['..ban.first_name..'](tg://user?id='..ban.id..')*\n*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
