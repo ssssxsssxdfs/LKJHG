@@ -2146,7 +2146,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 if Message_Reply.content.document then
@@ -2325,7 +2325,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Groups = Redis:smembers(LKJHG..'LKJHG:ChekBotAdd')  
 local UsersBot = Redis:smembers(LKJHG..'LKJHG:Num:User:Pv')  
@@ -2422,7 +2422,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(LKJHG..'LKJHG:Num:Add:Bot',text:match("تعين عدد الاعضاء (%d+)$") ) 
 LuaTele.sendText(msg_chat_id,msg_id,'*⌔︙ تم تعيين عدد اعضاء تفعيل البوت اكثر من : '..text:match("تعين عدد الاعضاء (%d+)$")..' عضو *',"md",true)  
@@ -2432,14 +2432,14 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 LuaTele.sendText(msg_chat_id,msg_id,'*⌔︙عدد احصائيات البوت الكامله \n••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••\n⌔︙عدد المجموعات : '..(Redis:scard(LKJHG..'LKJHG:ChekBotAdd') or 0)..'\n⌔︙عدد المشتركين : '..(Redis:scard(LKJHG..'LKJHG:Num:User:Pv') or 0)..'*',"md",true)  
 end
 if text == 'تفعيل' and msg.Developers then
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌔︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -2490,7 +2490,7 @@ end
 if text == 'تفعيل' and not msg.Developers then
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌔︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -2556,7 +2556,7 @@ end
 if text == 'تعطيل' and msg.Developers then
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Get_Chat = LuaTele.getChat(msg_chat_id)
 local Info_Chats = LuaTele.getSupergroupFullInfo(msg_chat_id)
@@ -2586,7 +2586,7 @@ end
 if text == 'تعطيل' and not msg.Developers then
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local StatusMember = LuaTele.getChatMember(msg_chat_id,msg.sender.user_id).status.luatele
 if (StatusMember == "chatMemberStatusCreator") then
@@ -2628,7 +2628,7 @@ if chat_type(msg.chat_id) == "GroupBot" and Redis:sismember(LKJHG.."LKJHG:ChekBo
 if text == "ايدي" and msg.reply_to_message_id == 0 then
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:get(LKJHG.."LKJHG:Status:Id"..msg_chat_id) then
 return false
@@ -2719,7 +2719,7 @@ end
 if text == 'ايدي' or text == 'كشف'  and msg.reply_to_message_id ~= 0 then
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
@@ -2823,13 +2823,13 @@ return LuaTele.sendText(msg_chat_id,msg_id,
 '\n⌔︙تفاعلك : '..TotalMsgT..
 '*'..(PermissionsUser or '') ,"md",true) 
 end
-if text == 'كشف البوت' then 
+if text == 'فحص' then 
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local StatusMember = LuaTele.getChatMember(msg_chat_id,LKJHG).status.luatele
 if (StatusMember ~= "chatMemberStatusAdministrator") then
@@ -2865,7 +2865,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌔︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -2903,7 +2903,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:DevelopersQ:Groups",UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"⌔︙تم تنزيله مطور ثانوي مسبقا ").Reply,"md",true)  
@@ -2918,7 +2918,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:Developers:Groups",UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"⌔︙تم تنزيله مطور مسبقا ").Reply,"md",true)  
@@ -2951,7 +2951,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:Originators:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"⌔︙تم تنزيله من المنشئين مسبقا ").Reply,"md",true)  
@@ -2966,7 +2966,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:Managers:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"⌔︙تم تنزيله من المدراء مسبقا ").Reply,"md",true)  
@@ -2981,7 +2981,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:Addictive:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"⌔︙تم تنزيله من الادمنيه مسبقا ").Reply,"md",true)  
@@ -2996,7 +2996,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:Distinguished:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"⌔︙تم تنزيله من المميزين مسبقا ").Reply,"md",true)  
@@ -3022,7 +3022,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:DevelopersQ:Groups",Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"⌔︙تم تنزيله مطور ثانوي مسبقا ").Reply,"md",true)  
@@ -3037,7 +3037,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:Developers:Groups",Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"⌔︙تم تنزيله مطور مسبقا ").Reply,"md",true)  
@@ -3080,7 +3080,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"⌔︙تم تنزيله من المنشئين مسبقا ").Reply,"md",true)  
@@ -3095,7 +3095,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:Managers:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"⌔︙تم تنزيله من المدراء مسبقا ").Reply,"md",true)  
@@ -3110,7 +3110,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:Addictive:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"⌔︙تم تنزيله من الادمنيه مسبقا ").Reply,"md",true)  
@@ -3125,7 +3125,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"⌔︙تم تنزيله من المميزين مسبقا ").Reply,"md",true)  
@@ -3155,7 +3155,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:DevelopersQ:Groups",UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"⌔︙تم تنزيله مطور ثانوي مسبقا ").Reply,"md",true)  
@@ -3170,7 +3170,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:Developers:Groups",UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"⌔︙تم تنزيله مطور مسبقا ").Reply,"md",true)  
@@ -3193,7 +3193,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:TheBasics:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"⌔︙تم تنزيله منشئ اساسي مسبقا ").Reply,"md",true)  
@@ -3208,7 +3208,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:Originators:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"⌔︙تم تنزيله من المنشئين مسبقا ").Reply,"md",true)  
@@ -3223,7 +3223,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:Managers:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"⌔︙تم تنزيله من المدراء مسبقا ").Reply,"md",true)  
@@ -3238,7 +3238,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:Addictive:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"⌔︙تم تنزيله من الادمنيه مسبقا ").Reply,"md",true)  
@@ -3253,7 +3253,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(LKJHG.."LKJHG:Distinguished:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"⌔︙تم تنزيله من المميزين مسبقا ").Reply,"md",true)  
@@ -3281,7 +3281,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(LKJHG.."LKJHG:DevelopersQ:Groups",UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"⌔︙تم ترقيته مطور ثانوي مسبقا ").Reply,"md",true)  
@@ -3296,7 +3296,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدم الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(LKJHG.."LKJHG:Developers:Groups",UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"⌔︙تم ترقيته مطور مسبقا ").Reply,"md",true)  
@@ -3318,7 +3318,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(LKJHG.."LKJHG:TheBasics:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"⌔︙تم ترقيته منشئ اساسي مسبقا ").Reply,"md",true)  
@@ -3333,7 +3333,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(LKJHG.."LKJHG:Originators:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"⌔︙تم ترقيته منشئ  مسبقا ").Reply,"md",true)  
@@ -3348,7 +3348,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(LKJHG.."LKJHG:Managers:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"⌔︙تم ترقيته مدير  مسبقا ").Reply,"md",true)  
@@ -3363,7 +3363,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not msg.Originators and not Redis:get(LKJHG.."LKJHG:Status:SetId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تعطيل (الرفع) من قبل المنشئين","md",true)
@@ -3410,7 +3410,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(LKJHG.."LKJHG:DevelopersQ:Groups",Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"⌔︙تم ترقيته مطور ثانوي مسبقا ").Reply,"md",true)  
@@ -3425,7 +3425,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(LKJHG.."LKJHG:Developers:Groups",Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"⌔︙تم ترقيته مطور مسبقا ").Reply,"md",true)  
@@ -3447,7 +3447,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(LKJHG.."LKJHG:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"⌔︙تم ترقيته منشئ اساسي مسبقا ").Reply,"md",true)  
@@ -3462,7 +3462,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(LKJHG.."LKJHG:Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"⌔︙تم ترقيته منشئ  مسبقا ").Reply,"md",true)  
@@ -3477,7 +3477,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(LKJHG.."LKJHG:Managers:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"⌔︙تم ترقيته مدير  مسبقا ").Reply,"md",true)  
@@ -3492,7 +3492,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not msg.Originators and not Redis:get(LKJHG.."LKJHG:Status:SetId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تعطيل (الرفع) من قبل المنشئين","md",true)
@@ -3510,7 +3510,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not msg.Originators and not Redis:get(LKJHG.."LKJHG:Status:SetId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تعطيل (الرفع) من قبل المنشئين","md",true)
@@ -3541,7 +3541,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(LKJHG.."LKJHG:DevelopersQ:Groups",UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"⌔︙تم ترقيته مطور ثانوي مسبقا ").Reply,"md",true)  
@@ -3556,7 +3556,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(LKJHG.."LKJHG:Developers:Groups",UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"⌔︙تم ترقيته مطور مسبقا ").Reply,"md",true)  
@@ -3578,7 +3578,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(LKJHG.."LKJHG:TheBasics:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"⌔︙تم ترقيته منشئ اساسي مسبقا ").Reply,"md",true)  
@@ -3593,7 +3593,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(LKJHG.."LKJHG:Originators:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"⌔︙تم ترقيته منشئ  مسبقا ").Reply,"md",true)  
@@ -3608,7 +3608,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(LKJHG.."LKJHG:Managers:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"⌔︙تم ترقيته مدير  مسبقا ").Reply,"md",true)  
@@ -3623,7 +3623,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not msg.Originators and not Redis:get(LKJHG.."LKJHG:Status:SetId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تعطيل (الرفع) من قبل المنشئين","md",true)
@@ -3641,7 +3641,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not msg.Originators and not Redis:get(LKJHG.."LKJHG:Status:SetId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تعطيل (الرفع) من قبل المنشئين","md",true)
@@ -4033,7 +4033,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(LKJHG.."LKJHG:Developers:Groups") 
 if #Info_Members == 0 then
@@ -4066,7 +4066,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(LKJHG.."LKJHG:TheBasics:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -4092,7 +4092,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدم الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(LKJHG.."LKJHG:Originators:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -4118,7 +4118,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(LKJHG.."LKJHG:Managers:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -4144,7 +4144,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(LKJHG.."LKJHG:Addictive:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -4170,7 +4170,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(LKJHG.."LKJHG:Distinguished:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -4196,7 +4196,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(LKJHG.."LKJHG:BanAll:Groups") 
 if #Info_Members == 0 then
@@ -4222,7 +4222,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(LKJHG.."LKJHG:BanGroup:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -4248,7 +4248,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(LKJHG.."LKJHG:SilentGroup:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -4275,7 +4275,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if TextMsg == 'الرابط' then
 Redis:set(LKJHG.."LKJHG:Status:Link"..msg_chat_id,true) 
@@ -4291,7 +4291,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(LKJHG.."LKJHG:Status:Id"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تفعيل الايدي ","md",true)
@@ -4302,7 +4302,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(LKJHG.."LKJHG:Status:IdPhoto"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تفعيل الايدي بالصوره ","md",true)
@@ -4313,7 +4313,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(LKJHG.."LKJHG:Status:Reply"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تفعيل ردود المدير ","md",true)
@@ -4324,7 +4324,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(LKJHG.."LKJHG:Status:ReplySudo"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تفعيل ردود المطور ","md",true)
@@ -4335,7 +4335,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(LKJHG.."LKJHG:Status:BanId"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تفعيل الحظر , الطرد , التقيد","md",true)
@@ -4346,7 +4346,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(LKJHG.."LKJHG:Status:SetId"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تفعيل الرفع ","md",true)
@@ -4365,7 +4365,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(LKJHG.."LKJHG:BotFree",true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تفعيل البوت الخدمي ","md",true)
@@ -4376,7 +4376,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(LKJHG.."LKJHG:TwaslBot",true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تفعيل التواصل داخل البوت ","md",true)
@@ -4391,7 +4391,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if TextMsg == 'الرابط' then
 Redis:del(LKJHG.."LKJHG:Status:Link"..msg_chat_id) 
@@ -4407,7 +4407,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(LKJHG.."LKJHG:Status:Id"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تعطيل الايدي ","md",true)
@@ -4418,7 +4418,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(LKJHG.."LKJHG:Status:IdPhoto"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تعطيل الايدي بالصوره ","md",true)
@@ -4429,7 +4429,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(LKJHG.."LKJHG:Status:Reply"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تعطيل ردود المدير ","md",true)
@@ -4440,7 +4440,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(LKJHG.."LKJHG:Status:ReplySudo"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تعطيل ردود المطور ","md",true)
@@ -4451,7 +4451,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(LKJHG.."LKJHG:Status:BanId"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تعطيل الحظر , الطرد , التقيد","md",true)
@@ -4462,7 +4462,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(LKJHG..'LKJHG:Channel:Join:Name')..'', url = 't.me/'..Redis:get(LKJHG..'LKJHG:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(LKJHG.."LKJHG:Status:SetId"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تعطيل الرفع ","md",true)
@@ -5506,7 +5506,7 @@ local texting = {"اخر افلام شاهدتها",
 "اخر اغنية سمعتها ?", 
 "تكلم عن نفسك", 
 "ليه انت مش سالك", 
-"ما هيا عيوب سورس ماتركس؟ ", 
+"ما هيا عيوب سورس اليكس؟ ", 
 "اخر كتاب قرآته", 
 "روايتك المفضله ?", 
 "اخر اكله اكلتها", 
@@ -5522,13 +5522,13 @@ local texting = {"اخر افلام شاهدتها",
 " ما السيء في هذه الحياة ؟ ", 
 "أجمل شيء حصل معك خلال هذا الاسبوع ؟ ", 
 "سؤال ينرفزك ؟ ", 
-" هل يعجبك سورس ماتركس؟؟ ", 
+" هل يعجبك سورس اليكس؟؟ ", 
 " اكثر ممثل تحبه ؟ ", 
 "قد تخيلت شي في بالك وصار ؟ ", 
 "شيء عندك اهم من الناس ؟ ", 
 "تفضّل النقاش الطويل او تحب الاختصار ؟ ", 
 "وش أخر شي ضيعته؟ ", 
-"اي رايك في سورس ماتركس؟ ", 
+"اي رايك في سورس اليكس؟ ", 
 "كم مره حبيت؟ ", 
 " اكثر المتابعين عندك باي برنامج؟", 
 " آخر مره ضربت عشره كانت متى ؟", 
@@ -8512,25 +8512,73 @@ end
 
 if text == "غنيلي" or text == "غني" then 
 Abs = math.random(2,140); 
-local Text ='*✯︙تم اختيار الاغنيه لك*'
+local Text ='*‎⌔ تم اختيار الاغنيه لك*'
 local MsgId = msg.id/2097152/0.5
 local MSGID = string.gsub(MsgId,'.0','')
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/TEAMSUL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown") 
 end
 
+if text == "صوره" or text == "صو" then 
+
+Abs = math.random(2,1171); 
+
+local Text ='* ⌔ تم اختيار الصوره لك *'
+
+local MsgId = msg.id/2097152/0.5
+
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/PhotosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown")
+end
+
+if text == "انمي" or text == "ان" then 
+
+Abs = math.random(2,1002); 
+
+local Text ='* ⌔ تم اختيار الانمي لك *'
+
+local MsgId = msg.id/2097152/0.5
+
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/AnimeDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown")
+end
+
 if text == "شعر" or text == "ش" then 
 Abs = math.random(3,104); 
-local Text ='*✯︙تم ختيار شعر لك*'
+local Text ='*‎⌔ تم اختيار الشعر لك*'
 local MsgId = msg.id/2097152/0.5
 local MSGID = string.gsub(MsgId,'.0','')
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/AlexBesso/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown") 
+end
+
+if text == "راب" or text == "را" then 
+Abs = math.random(2,19); 
+local Text ='*⌔ تم اختيار الراب لك *'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/RapAleXx/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown")
+end
+
+if text == "كت متحركه" or text == "كتمت" then 
+Abs = math.random(2,19); 
+local Text ='*⌔ تم اختيار السؤال لك*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/TwTTMTKK/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown")
+end
+
+if text == "ريمكس" or text == "ري" then 
+Abs = math.random(2,18); 
+local Text ='*⌔ تم اختيار الريمكس لك*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/REMKSSAlex/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown")
 end
 
 if text == "متحركه" or text == "مت" then 
 
 Abs = math.random(2,1075); 
 
-local Text ='*✯︙تم اختيار المتحركه لك*'
+local Text ='*‎⌔ تم اختيار المتحركه لك*'
 
 local MsgId = msg.id/2097152/0.5
 
@@ -9332,14 +9380,14 @@ data = {
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id, [[*
-⌔︙توجد ← 6 اوامر في البوت
-• • • • • • • • • • • • • • • •
-⌔︙ { 1 } ←  الحمايه
-⌔︙ { 2 } ←  الادمنيه
-⌔︙ { 3 } ←  المدراء
-⌔︙ { 4 } ←  المنشئين
-⌔︙ { 5 } ←  مطورين البوت
-⌔︙ { 6 } ←  التسليه
+⌔ توجد ← 6 اوامر في البوت
+━─━─━─x─━─━─━
+⌔ ( 1 ) ←  الحمايه •
+⌔ ( 2 ) ←  الادمنيه •
+⌔ ( 3 ) ←  المدراء •
+⌔ ( 4 ) ←  المنشئين •
+⌔ ( 5 ) ←  مطورين البوت •
+⌔ ( 6 ) ←  التسليه •
 *]],"md",false, false, false, false, reply_markup)
 elseif text == 'م1' then
 if not msg.Addictive then
@@ -10875,34 +10923,34 @@ data = {
 }
 }
 local TextHelp = [[*
-⌔︙اوامر الحمايه  
-••••••••••••••••••••••••••••
-⌔︙قفل ، فتح ← الامر 
-⌔︙تستطيع قفل 
-⌔︙← { بالتقيد ، بالطرد ، بالكتم }
-⌔︙الروابط
-⌔︙المعرف
-⌔︙التاك
-⌔︙الشارحه
-⌔︙التعديل
-⌔︙التثبيت
-⌔︙المتحركه
-⌔︙الملفات
-⌔︙الصور
-⌔︙الماركداون
-⌔︙البوتات
-⌔︙التكرار
-⌔︙الكلايش
-⌔︙السيلفي
-⌔︙الملصقات
-⌔︙الفيديو
-⌔︙الانلاين
-⌔︙الدردشه
-⌔︙التوجيه
-⌔︙الاغاني
-⌔︙الصوت
-⌔︙الجهات
-⌔︙الاشعارات
+⌔ اوامر الحمايه  
+━─━─━─x─━─━─━
+⌔ ( قفل ، فتح ← الامر )
+⌔ ( تستطيع قفل )
+⌔ ( بالتقيد ، بالطرد ، بالكتم )
+⌔ ( الروابط )
+⌔ ( المعرف )
+⌔ ( التاك )
+⌔ ( الشارحه )
+⌔ ( التعديل )
+⌔ ( التثبيت )
+⌔ ( المتحركه )
+⌔ ( الملفات )
+⌔ ( الصور )
+⌔ ( الماركداون )
+⌔ ( البوتات )
+⌔ ( التكرار )
+⌔ ( الكلايش )
+⌔ ( السيلفي )
+⌔ ( الملصقات )
+⌔ ( الفيديو )
+⌔ ( الانلاين )
+⌔ ( الدردشه )
+⌔ ( التوجيه )
+⌔ ( الاغاني )
+⌔ ( الصوت )
+⌔ ( الجهات )
+⌔ ( الاشعارات )
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -10930,32 +10978,32 @@ data = {
 }
 }
 local TextHelp = [[*
-⌔︙اوامر ادمنية المجموعه 
-••••••••••••••••••••••••••••
-⌔︙رفع، تنزيل ← مميز
-⌔︙تاك للكل ، عدد الكروب
-⌔︙كتم ، حظر ، طرد ، تقيد
-⌔︙الغاء كتم ، الغاء حظر ، الغاء تقيد
-⌔︙منع ، الغاء منع 
-⌔︙المكتومين
-⌔︙المميزين 
-⌔︙قائمه المنع
-⌔︙تثبيت ، الغاء تثبيت
-⌔︙الرابط ، الاعدادات
-⌔︙الترحيب ، القوانين
-⌔︙تفعيل ، تعطيل ← الترحيب
-⌔︙تفعيل ، تعطيل ← الرابط
-⌔︙جهاتي ،ايدي ، رسائلي
-⌔︙سحكاتي ، مجوهراتي
-⌔︙كشف البوتات
-⌔︙وضع ، ضع ← الاوامر التاليه 
-⌔︙اسم ، رابط ، صوره
-⌔︙قوانين ، وصف ، ترحيب
-⌔︙حذف ، مسح ← الاوامر التاليه
-⌔︙قائمه المنع ، المحظورين 
-⌔︙المميزين ، المكتومين ، القوانين
-⌔︙المطرودين ، البوتات ، الصوره
-⌔︙الرابط
+⌔ اوامر ادمنية المجموعه 
+━─━─━─x─━─━─━
+⌔ ( رفع، تنزيل ، مميز )
+⌔ ( تاك للكل ، عدد الكروب )
+⌔ ( كتم ، حظر ، طرد ، تقيد )
+⌔ ( الغاء كتم ، الغاء حظر ، الغاء تقيد )
+⌔ ( منع ، الغاء منع  )
+⌔ ( المكتومين )
+⌔ ( المميزين  )
+⌔ ( قائمه المنع )
+⌔ ( تثبيت ، الغاء تثبيت )
+⌔ ( الرابط ، الاعدادات )
+⌔ ( الترحيب ، القوانين )
+⌔ ( تفعيل ، تعطيل ← الترحيب )
+⌔ ( تفعيل ، تعطيل ← الرابط )
+⌔ ( جهاتي ،ايدي ، رسائلي )
+⌔ ( سحكاتي ، مجوهراتي )
+⌔ ( كشف البوتات )
+⌔ ( وضع ، ضع ، الاوامر التاليه  )
+⌔ ( اسم ، رابط ، صوره )
+⌔ ( قوانين ، وصف ، ترحيب )
+⌔ ( حذف ، مسح ، الاوامر التاليه )
+⌔ ( قائمه المنع ، المحظورين  )
+⌔ ( المميزين ، المكتومين ، القوانين )
+⌔ ( المطرودين ، البوتات ، الصوره )
+⌔ ( الرابط )
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -10983,27 +11031,27 @@ data = {
 }
 }
 local TextHelp = [[*
-⌔︙اوامر المدراء في المجموعه
-••••••••••••••••••••••••••••
-⌔︙رفع ، تنزيل ← ادمن
-⌔︙الادمنيه 
-⌔️︙رفع، كشف ← القيود
-⌔︙تنزيل الكل ← { بالرد ، بالمعرف }
-⌔︙لتغيير رد الرتب في البوت
-⌔︙تغير رد ← {اسم الرتبه والنص} 
-⌔︙المطور ، المنشئ الاساسي
-⌔︙المنشئ ، المدير ، الادمن
-⌔︙المميز ، العضو
-⌔︙تفعيل ، تعطيل ← الاوامر التاليه ↓
-⌔︙الايدي ، الايدي بالصوره
-⌔︙ردود المطور ، ردود المدير
-⌔︙اطردني ، الالعاب ، الرفع
-⌔︙الحظر ، الرابط ،
-⌔︙تعين ، مسح ←{ الايدي }
-⌔︙رفع الادمنيه ، مسح الادمنيه
-⌔︙ردود المدير ، مسح ردود المدير
-⌔︙اضف ، حذف ← { رد }
-⌔︙تنظيف ← { عدد }
+⌔ اوامر المدراء في المجموعه
+━─━─━─x─━─━─━
+⌔ ( رفع ، تنزيل ← ادمن )
+⌔ ( الادمنيه )
+⌔ ( رفع، كشف ← القيود )
+⌔ ( تنزيل الكل ← { بالرد ، بالمعرف )
+⌔ ( لتغيير رد الرتب في البوت
+⌔ ( تغير رد (اسم الرتبه والنص )
+⌔ ( المطور ، المنشئ الاساسي )
+⌔ ( المنشئ ، المدير ، الادمن )
+⌔ ( المميز ، العضو )
+⌔ ( تفعيل ، تعطيل ، الاوامر التاليه  )
+⌔ ( الايدي ، الايدي بالصوره )
+⌔ ( ردود المطور ، ردود المدير )
+⌔ ( اطردني ، الالعاب ، الرفع )
+⌔ ( الحظر ، الرابط  )
+⌔ ( تعين ، مسح ، الايدي )
+⌔ ( رفع الادمنيه ، مسح الادمنيه )
+⌔ ( ردود المدير ، مسح ردود المدير )
+⌔ ( اضف ، حذف ، رد )
+⌔ ( تنظيف + عدد )
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -11031,18 +11079,18 @@ data = {
 }
 }
 local TextHelp = [[*
-⌔︙اوامر المنشئ الاساسي
-••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••
-⌔︙رفع ، تنزيل ←{ منشئ }
-⌔︙المنشئين ، مسح المنشئين
-••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••
-⌔︙اوامر المنشئ المجموعه
-⌔︙رفع ، تنزيل  { مدير }
-⌔︙المدراء ، مسح المدراء
-⌔︙اضف رسائل  { بالرد او الايدي }
-⌔︙اضف مجوهرات  { بالرد او الايدي }
-⌔︙اضف ، حذف  { امر }
-⌔︙الاوامر المضافه ، مسح الاوامر المضافه
+⌔ اوامر المنشئ الاساسي
+━─━─━─x─━─━─━
+⌔ ( رفع ، تنزيل ←{ منشئ }
+⌔ ( المنشئين ، مسح المنشئين
+━─━─━─x─━─━─━
+⌔ ( اوامر المنشئ المجموعه )
+⌔ ( رفع ، تنزيل ، مدير )
+⌔ ( المدراء ، مسح المدراء )
+⌔ ( اضف رسائل  ، بالرد او الايدي )
+⌔ ( اضف مجوهرات ، بالرد او الايدي )
+⌔ ( اضف ، حذف ، امر )
+⌔ ( الاوامر المضافه ، مسح الاوامر المضافه )
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -11070,28 +11118,27 @@ data = {
 }
 }
 local TextHelp = [[*
-⌔︙اوامر المطور الاساسي  
-••••••••••••••••••••••••••••
-⌔︙حظر عام ، الغاء العام
-⌔︙اضف ، حذف  { مطور } 
-⌔︙قائمه العام ، مسح قائمه العام
-⌔︙المطورين ، مسح المطورين
-⌔︙اضف ، حذف  { رد للكل }
-⌔︙وضع ، حذف  { كليشه المطور } 
-⌔︙مسح ردود المطور ، ردود المطور 
-⌔︙تحديث ،  تحديث السورس 
-⌔︙تعين عدد الاعضاء ← { العدد }
-⌔︙تفعيل ، تعطيل  { الاوامر التاليه ↓}
-⌔︙البوت الخدمي ، المغادرة ، الاذاعه
-••••••••••••••••••••••••••••
-⌔︙اوامر المطور في البوت
-••••••••••••••••••••••••••••
-⌔︙تفعيل ، تعطيل ، الاحصائيات
-⌔︙رفع، تنزيل  { منشئ اساسي }
-⌔︙مسح الاساسين ، المنشئين الاساسين 
-⌔︙غادر ، غادر  { والايدي }
-⌔︙اذاعه ، اذاعه بالتوجيه ، اذاعه بالتثبيت
-⌔︙اذاعه خاص ، اذاعه خاص بالتوجيه 
+⌔ اوامر المطور الاساسي  
+━─━─━─x─━─━─━
+⌔ ( حظر عام ، الغاء العام )
+⌔ ( اضف ، حذف  ، مطور )
+⌔ ( قائمه العام ، مسح قائمه العام )
+⌔ ( المطورين ، مسح المطورين )
+⌔ ( اضف ، حذف ، رد للكل )
+⌔ ( وضع ، حذف  ، كليشه المطور )
+⌔ ( مسح ردود المطور ، ردود المطور )
+⌔ ( تحديث ،  تحديث السورس )
+⌔ ( تعين عدد الاعضاء ، العدد )
+⌔ ( تفعيل ، تعطيل  { الاوامر التاليه )
+⌔ ( البوت الخدمي ، المغادرة ، الاذاعه )
+━─━─━─x─━─━─━
+⌔ اوامر المطور في البوت ↓
+━─━─━─x─━─━─━
+⌔ ( تفعيل ، تعط ، منشئ اساسي )
+⌔ ( مسح الاساسين ، المنشئين الاساسين )
+⌔ ( غادر ، غادر ، والايدي )
+⌔ ( اذاعه ، اذاعه بالتوجيه ، اذاعه بالتثبيت )
+⌔ ( اذاعه خاص ، اذاعه خاص بالتوجيه ) 
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -11119,20 +11166,20 @@ data = {
 }
 }
 local TextHelp = [[*
-⌔︙قائمه الالعاب 
-••••••••••••••••••••••••••••
-⌔︙لعبة المختلف • المختلف
-⌔︙لعبة الامثله • امثله
-⌔︙لعبة العكس • العكس
-⌔︙لعبة الحزوره • حزوره
-⌔︙لعبة المعاني • معاني
-⌔︙لعبة البات • بات
-⌔︙لعبة التخمين • خمن
-⌔︙لعبه الاسرع • الاسرع
-⌔︙لعبة السمايلات • سمايلات
-⌔︙لعبة الاسئله • كت تويت
-⌔︙لعبة الرياضيات • رياضيات
-⌔︙لعبة الانكليزي • انكلش
+⌔ قائمه الالعاب 
+━─━─━─x─━─━─━
+⌔ ( لعبة المختلف ، المختلف )
+⌔ ( لعبة الامثله ، امثله )
+⌔ ( لعبة العكس ، العكس )
+⌔ ( لعبة الحزوره ، حزوره )
+⌔ ( لعبة المعاني ، معاني
+⌔ ( لعبة البات ، بات )
+⌔ ( لعبة التخمين ، خمن )
+⌔ ( لعبه الاسرع ، الاسرع )
+⌔ ( لعبة السمايلات ، سمايلات )
+⌔ ( لعبة الاسئله ، كت تويت )
+⌔ ( لعبة الرياضيات ، رياضيات )
+⌔ ( لعبة الانكليزي ، انكلش )
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -11160,20 +11207,17 @@ data = {
 }
 }
 local TextHelp = [[*
-رفع + تنزيل + الامر
-⌔︙اثول
-⌔︙جلب
-⌔︙نوتيلا
-⌔︙شوكلاته
-⌔︙مطي
-⌔︙صخل
-⌔︙زاحف
-⌔︙الرفع
-⌔︙كلبي
-⌔︙ورده
-⌔︙تاج
-⌔︙نبي
-⌔︙تويكس 
+اوامر التسليه  .
+─━─x─━─
+⌔ غنيلي 
+⌔ شعر 
+⌔ فلم
+⌔ راب  
+⌔ انمي 
+⌔ صوره 
+⌔ متحركه
+⌔ ريمكس  
+⌔ كت متحركه
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -11201,14 +11245,14 @@ data = {
 }
 }
 local TextHelp = [[*
-⌔︙توجد ← 6 اوامر في البوت
-• • • • • • • • • • • • • • • •
-⌔︙ { 1 } ←  الحمايه
-⌔︙ { 2 } ←  الادمنيه
-⌔︙ { 3 } ←  المدراء
-⌔︙ { 4 } ←  المنشئين
-⌔︙ { 5 } ←  مطورين البوت
-⌔︙ { 6 } ←  التسليه
+⌔ توجد ← 6 اوامر في البوت
+━─━─━─x─━─━─━
+⌔ ( 1 ) ←  الحمايه •
+⌔ ( 2 ) ←  الادمنيه •
+⌔ ( 3 ) ←  المدراء •
+⌔ ( 4 ) ←  المنشئين •
+⌔ ( 5 ) ←  مطورين البوت •
+⌔ ( 6 ) ←  التسليه •
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
