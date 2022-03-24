@@ -5826,27 +5826,58 @@ end
 LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙تم ترقيه - ('..y..') ادمنيه *',"md",true)  
 end
 
-if text == 'المالك' then
+
+
+if text == 'المنشئ' or text == 'المالك' then
 if msg.can_be_deleted_for_all_users == false then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌔︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
-end
-local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
-local List_Members = Info_Members.members
-for k, v in pairs(List_Members) do
-if Info_Members.members[k].status.luatele == "chatMemberStatusCreator" then
-local UserInfo = LuaTele.getUser(v.member_id.user_id)
-if UserInfo.first_name == "" then
-LuaTele.sendText(msg_chat_id,msg_id,"*⌔︙اوبس , المالك حسابه محذوف *","md",true)  
+LuaTele.sendText(msg.chat_id,msg.id,"*- البوت لا يمتلك صلاحيه .*","md",true)  
 return false
 end
-if UserInfo.username then
-Creator = "*⌔︙مالك المجموعه : @"..UserInfo.username.."*\n"
+local info_ = LuaTele.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
+local list_ = info_.members
+for k, v in pairs(list_) do
+if info_.members[k].status.luatele == "chatMemberStatusCreator" then
+local UserInfo = LuaTele.getUser(v.member_id.user_id)
+if UserInfo.first_name == "" then
+LuaTele.sendText(msg_chat_id,msg_id,"*- "..text.." حساب محذوف .*","md",true)  
+return false
+end
+if UserInfo.username and UserInfo.username ~= "" then
+t = '['..UserInfo.first_name..'](t.me/'..UserInfo.username..')'
+u = '[@'..UserInfo.username..']'
 else
-Creator = "⌔︙مالك المجموعه : *["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n"
+t = '['..UserInfo.first_name..'](tg://user?id='..UserInfo.id..')'
+u = 'لا يوجد'
 end
-return LuaTele.sendText(msg_chat_id,msg_id,Creator,"md",true)  
+sm = LuaTele.getChatMember(msg.chat_id,UserInfo.id)
+if sm.status.custom_title then
+if sm.status.custom_title ~= "" then
+custom = sm.status.custom_title
+else
+custom = 'لا يوجد'
 end
 end
+if sm.status.luatele == "chatMemberStatusCreator"  then
+gstatus = "المنشئ"
+elseif sm.status.luatele == "chatMemberStatusAdministrator" then
+gstatus = "المشرف"
+else
+gstatus = "العضو"
+end
+local photo = LuaTele.getUserProfilePhotos(UserInfo.id) 
+kup = LuaTele.replyMarkup{
+type = 'inline',data = {
+{{text = UserInfo.first_name,url="https://t.me/"..UserInfo.username}},
+}
+}
+
+if photo.total_count > 0 then
+LuaTele.sendPhoto(msg_chat_id,msg_id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,"*⌔︙ 𝐓𝐎 𝐍𝐀𝐌𝐄 *( "..(t).." *)*\n*⌔︙ 𝐓𝐇𝐄 𝗨𝐒𝐄𝐑 *( "..(u).." *)*\n["..UserInfo.id.."]", 'md', nil, nil, nil, nil, nil, nil, nil, nil, nil, kup)
+else
+LuaTele.sendText(msg_chat_id,msg_id,"*⌔︙ 𝐓𝐎 𝐍𝐀𝐌𝐄 *( "..(t).." *)*\n*⌔︙ 𝐓𝐇𝐄 𝗨𝐒𝐄𝐑 *( "..(u).." *)*\n["..UserInfo.id.."]*","md",true, false, false, false, kup)
+end
+end
+end 
 end
 
 
