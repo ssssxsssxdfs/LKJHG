@@ -5768,7 +5768,7 @@ local texting = {"اخر افلام شاهدتها",
 return LuaTele.sendText(msg_chat_id,msg_id,texting[math.random(#texting)],'md')
 end
 end
-if text == 'ادمنيه الكروب' then
+if text == 'المشرفين'or text == 'تاك للمشرفين'then
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
 end
@@ -5780,7 +5780,7 @@ if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌔︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
 end
 local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
-listAdmin = '\n*⌔︙قائمه الادمنيه \n ••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••*\n'
+listAdmin = '\n*⌔︙قائمه المشرفين \n ••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••*\n'
 local List_Members = Info_Members.members
 for k, v in pairs(List_Members) do
 if Info_Members.members[k].status.luatele == "chatMemberStatusCreator" then
