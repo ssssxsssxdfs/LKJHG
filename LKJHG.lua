@@ -135,7 +135,7 @@ Distinguished = Redis:sismember(LKJHG.."LKJHG:Distinguished:Group"..ChatId,UserI
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 909150066 then
 Status = 'مبرمج السورس'
-elseif UserId == 909150066 then
+elseif UserId == 1696477971 then
 Status = 'مطور السورس'
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
@@ -925,7 +925,7 @@ end
 if tonumber(msg.sender.user_id) == 909150066 then
 msg.Name_Controller = 'مبرمج السورس '
 msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 909150066 then
+elseif tonumber(msg.sender.user_id) == 1696477971 then
 msg.Name_Controller = 'مبرمج السورس '
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
@@ -8488,15 +8488,10 @@ return LuaTele.sendText(msg_chat_id,msg_id, '⌔︙تم ازالة كليشة ا
 end
 
 if text == "غنيلي" or text == "غني" then 
-
-Abs = math.random(2,140); 
-
-local Text ='* ⌔ تم اختيار الاغنيه لك *'
-
+Abs = math.random(3,140); 
+local Text ='*‎⌔ تم اختيار الاغنيه لك*'
 local MsgId = msg.id/2097152/0.5
-
 local MSGID = string.gsub(MsgId,'.0','')
-
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/TEAMSUL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown")
 end
 
@@ -9293,7 +9288,7 @@ else
 local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
 if photo.total_count > 0 then
 local ban = LuaTele.getUser(Sudo_Id)
-local T = '* ❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓𝒔 𝑩𝒐𝒕 ❳\n— — — — — — — — —\n⌔︙Name  : *['..ban.first_name..'](tg://user?id='..ban.id..')*\n'
+local T = '* ❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓𝒔 𝑩𝒐𝒕 ❳\n— — — — — — — — —\n‹ : 𝑫𝒆𝒗 𝑵𝒂𝒎𝒆 : *['..ban.first_name..'](tg://user?id='..ban.id..')*\n*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
