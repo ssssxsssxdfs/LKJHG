@@ -135,7 +135,7 @@ Distinguished = Redis:sismember(LKJHG.."LKJHG:Distinguished:Group"..ChatId,UserI
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 909150066 then
 Status = 'مبرمج السورس'
-elseif UserId == 1696477971 then
+elseif UserId == 909150066 then
 Status = 'مطور السورس'
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
@@ -925,7 +925,7 @@ end
 if tonumber(msg.sender.user_id) == 909150066 then
 msg.Name_Controller = 'مبرمج السورس '
 msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 1696477971 then
+elseif tonumber(msg.sender.user_id) == 909150066 then
 msg.Name_Controller = 'مبرمج السورس '
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
@@ -8491,7 +8491,7 @@ if text == "غنيلي" or text == "غني" then
 
 Abs = math.random(2,140); 
 
-local Text ='*⌔ تم اختيار الاغنيه لك *'
+local Text ='* ⌔ تم اختيار الاغنيه لك *'
 
 local MsgId = msg.id/2097152/0.5
 
@@ -9293,7 +9293,7 @@ else
 local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
 if photo.total_count > 0 then
 local ban = LuaTele.getUser(Sudo_Id)
-local T = '* ❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓𝒔 𝑩𝒐𝒕 ❳\n— — — — — — — — —\n‹ : 𝑫𝒆𝒗 𝑵𝒂𝒎𝒆 : *['..ban.first_name..'](tg://user?id='..ban.id..')*\n*'
+local T = '* ❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓𝒔 𝑩𝒐𝒕 ❳\n— — — — — — — — —\n⌔︙Name  : *['..ban.first_name..'](tg://user?id='..ban.id..')*\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
@@ -9365,7 +9365,9 @@ end
 
 if text == "مبرمج السورس" or text == "مطور السورس" or text == "وين المبرمج" or text == "المبرمج" or text == "˓ مبرمج السورس ⌔" then 
 Text = [[
-⌔︰[مبرمج السورس](https://t.me/vv3oo)
+⌔︙Dev Name : [𝖰𝖽𝗈𝖲𝗁](https://t.me/vv3oo)
+⌔︙User : ( @vv3oo )
+⌔︙Bio : 𝖣َ𝗈 𝖭𝗈𝗍 𝖯َ𝖺𝗇𝗂𝖼 @DD4EE .
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
