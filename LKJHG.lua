@@ -9393,20 +9393,27 @@ end
 end
 end
 
-if text == "مبرمج السورس" or text == "مطور السورس" or text == "وين المبرمج" or text == "المبرمج" or text == "يامبرمج" then 
-Text = [[
-⌔︙Dev Name : [𝖰𝖽𝗈𝖲𝗁](https://t.me/vv3oo)
-⌔︙User : ( @vv3oo )
-⌔︙Bio : 𝖣َ𝗈 𝖭𝗈𝗍 𝖯َ𝖺𝗇𝗂𝖼 @DD4EE .
-]]
+if text == 'مبرمج السورس' or text == 'المبرمج' or text == 'مطور السورس' then
+local TextingDevLKJHG = Redis:get(LKJHG..'LKJHG:Texting: vv3oo')
+if TextingDevLKJHG then 
+return LuaTele.sendText(msg_chat_id,msg_id,TextingDevLKJHG,"md",true)  
+else
+local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
+if photo.total_count > 0 then
+local ban = LuaTele.getUser(Sudo_Id)
+local T = '* ❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓𝒔 𝑩𝒐𝒕 ❳\n— — — — — — — — —\n‹ : 𝑫𝒆𝒗 𝑵𝒂𝒎𝒆 : *['..ban.first_name..'](tg://user?id='..ban.id..')*\n*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'Dev Source !', url = "https://t.me/vv3oo"}
+{text = ''..ban.first_name..'', url = "t.me/"..ban.username..""}
 },
 }
-local MsgId = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/vv3oo&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown")
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ◉ مطور البوت : {*['..ban.first_name..'](tg://user?id='..ban.id..')*}*',"md",true)  
+end
+end
 end
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'source' then
 photo = "https://t.me/U9908"
