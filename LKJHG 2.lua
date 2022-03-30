@@ -5452,6 +5452,7 @@ local texting = {"اخر افلام شاهدتها",
 "اخر اغنية سمعتها ?", 
 "تكلم عن نفسك", 
 "ليه انت مش سالك", 
+"ما هيا عيوب سورس اليكس؟ ", 
 "اخر كتاب قرآته", 
 "روايتك المفضله ?", 
 "اخر اكله اكلتها", 
@@ -5467,11 +5468,13 @@ local texting = {"اخر افلام شاهدتها",
 " ما السيء في هذه الحياة ؟ ", 
 "أجمل شيء حصل معك خلال هذا الاسبوع ؟ ", 
 "سؤال ينرفزك ؟ ", 
+" هل يعجبك سورس اليكس؟؟ ", 
 " اكثر ممثل تحبه ؟ ", 
 "قد تخيلت شي في بالك وصار ؟ ", 
 "شيء عندك اهم من الناس ؟ ", 
 "تفضّل النقاش الطويل او تحب الاختصار ؟ ", 
-"وش أخر شي ضيعته؟ ",  
+"وش أخر شي ضيعته؟ ", 
+"اي رايك في سورس اليكس؟ ", 
 "كم مره حبيت؟ ", 
 " اكثر المتابعين عندك باي برنامج؟", 
 " آخر مره ضربت عشره كانت متى ؟", 
@@ -5734,6 +5737,7 @@ local texting = {"اخر افلام شاهدتها",
   "انسان م تحب تتعامل معاه ابداً ؟ ",
   "شيء بسيط تحتفظ فيه؟ ",
   "فُرصه تتمنى لو أُتيحت لك ؟ ",
+   "لي باندا ناك اليكس؟ ",
   "شيء مستحيل ترفضه ؟. ",
   "لو زعلت بقوة وش بيرضيك ؟ ",
   "تنام بـ اي مكان ، ولا بس غرفتك ؟ ",
@@ -5764,7 +5768,7 @@ local texting = {"اخر افلام شاهدتها",
 return LuaTele.sendText(msg_chat_id,msg_id,texting[math.random(#texting)],'md')
 end
 end
-if text == 'المشرفين' or text == 'تاك للمشرفين'then
+if text == 'المشرفين'or text == 'تاك للمشرفين'then
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
 end
@@ -5793,7 +5797,7 @@ end
 end
 LuaTele.sendText(msg_chat_id,msg_id,listAdmin,"md",true)  
 end
-if text == 'رفع المشرفين' then
+if text == 'رفع الادمنيه' then
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
 end
@@ -8483,81 +8487,116 @@ Redis:del(LKJHG.."LKJHG:Set:Id:Group"..msg.chat_id)
 return LuaTele.sendText(msg_chat_id,msg_id, '⌔︙تم ازالة كليشة الايدي ',"md",true)  
 end
 
-if text == "غنيلي" or text == "غني" then 
-Abs = math.random(3,140); 
-local Text ='*‎⌔ تم اختيار الاغنيه لك*'
-local MsgId = msg.id/2097152/0.5
-local MSGID = string.gsub(MsgId,'.0','')
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/TEAMSUL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown")
+
+if msg.content.text then 
+if text == "غنيلي" or text == "غني" and tonumber(msg.reply_to_message_id) == 0 then
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{
+{text = '⌔ 𝖠𝗹𝗲𝘅 𝖳𝗲𝗮𝗺 .', url="https://t.me/U9908"}
+},
+}
+local msgg = msg.id/2097152/0.5
+return https.request("https://api.telegram.org/bot"..Token.."/sendVoice?chat_id="..msg.chat_id.."&voice=https://t.me/TEAMSUL/"..math.random(3,140).."&caption="..URL.escape("⌔ تم اختيار الاغنيه لك").."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
 end
 
 
-if text == "صوره" or text == "صو" then 
-
-Abs = math.random(2,1171); 
-
-local Text ='* ⌔ تم اختيار الصوره لك *'
-
-local MsgId = msg.id/2097152/0.5
-
-local MSGID = string.gsub(MsgId,'.0','')
-https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/PhotosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown")
+if msg.content.text then 
+if text == "صوره" or text == "صورة" and tonumber(msg.reply_to_message_id) == 0 then
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{
+{text = '⌔ 𝖠𝗹𝗲𝘅 𝖳𝗲𝗮𝗺 .', url="https://t.me/U9908"} 
+}, 
+} 
+local msgg = msg.id/2097152/0.5 
+return https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg.chat_id.."&photo=https://t.me/PhotosDavid/"..math.random(2,1171).."&caption="..URL.escape("⌔ تم اختيار الصوره لك").."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
 end
 
-if text == "انمي" or text == "ان" then 
 
-Abs = math.random(2,1002); 
-
-local Text ='* ⌔ تم اختيار الانمي لك *'
-
-local MsgId = msg.id/2097152/0.5
-
-local MSGID = string.gsub(MsgId,'.0','')
-https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/AnimeDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown")
+if msg.content.text then 
+if text == "انمي" or text == "ان" and tonumber(msg.reply_to_message_id) == 0 then
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{ 
+{text = '⌔ 𝖠𝗹𝗲𝘅 𝖳𝗲𝗮𝗺 .', url="https://t.me/U9908"} 
+}, 
+} 
+local msgg = msg.id/2097152/0.5 
+return https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg.chat_id.."&photo=https://t.me/AnimeDavid/"..math.random(2,1002).."&caption="..URL.escape("⌔ تم اختيار الانمي لك").."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
 end
 
-if text == "شعر" or text == "ش" then 
-Abs = math.random(3,104); 
-local Text ='*‎⌔ تم اختيار الشعر لك*'
-local MsgId = msg.id/2097152/0.5
-local MSGID = string.gsub(MsgId,'.0','')
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/AlexBesso/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown") 
+
+if msg.content.text then 
+if text == "شعر" or text == "شع" and tonumber(msg.reply_to_message_id) == 0 then
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{ 
+{text = '⌔ 𝖠𝗹𝗲𝘅 𝖳𝗲𝗮𝗺 .', url="https://t.me/U9908"} 
+}, 
+} 
+local msgg = msg.id/2097152/0.5 
+return https.request("https://api.telegram.org/bot"..Token.."/sendVoice?chat_id="..msg.chat_id.."&voice=https://t.me/AlexBesso/"..math.random(3,104).."&caption="..URL.escape("⌔ تم اختيار الشعر لك").."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end 
 end
 
-if text == "راب" or text == "را" then 
-Abs = math.random(2,19); 
-local Text ='*⌔ تم اختيار الراب لك *'
-local MsgId = msg.id/2097152/0.5
-local MSGID = string.gsub(MsgId,'.0','')
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/RapAleXx/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown")
+
+if msg.content.text then 
+if text == "راب" or text == "را" and tonumber(msg.reply_to_message_id) == 0 then
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{ 
+{text = '⌔ 𝖠𝗹𝗲𝘅 𝖳𝗲𝗮𝗺 .', url="https://t.me/U9908"} 
+}, 
+} 
+local msgg = msg.id/2097152/0.5 
+return https.request("https://api.telegram.org/bot"..Token.."/sendVoice?chat_id="..msg.chat_id.."&voice=https://t.me/RapAleXx/"..math.random(3,15).."&caption="..URL.escape("⌔ تم اختيار الراب لك").."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
 end
 
-if text == "كت متحركه" or text == "كتمت" then 
-Abs = math.random(2,19); 
-local Text ='*⌔ تم اختيار السؤال لك*'
-local MsgId = msg.id/2097152/0.5
-local MSGID = string.gsub(MsgId,'.0','')
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/TwTTMTKK/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown")
+
+if msg.content.text then 
+if text == "ريمكس" or text == "ريم" and tonumber(msg.reply_to_message_id) == 0 then
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{ 
+{text = '⌔ 𝖠𝗹𝗲𝘅 𝖳𝗲𝗮𝗺 .', url="https://t.me/U9908"} 
+}, 
+} 
+local msgg = msg.id/2097152/0.5 
+return https.request("https://api.telegram.org/bot"..Token.."/sendVoice?chat_id="..msg.chat_id.."&voice=https://t.me/REMKSSAlex/"..math.random(3,19).."&caption="..URL.escape("⌔ تم اختيار الريمكس لك").."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
 end
 
-if text == "ريمكس" or text == "ري" then 
-Abs = math.random(2,18); 
-local Text ='*⌔ تم اختيار الريمكس لك*'
-local MsgId = msg.id/2097152/0.5
-local MSGID = string.gsub(MsgId,'.0','')
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/REMKSSAlex/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown")
+
+if msg.content.text then 
+if text == "كت متحركه" or text == "كت متحركة" and tonumber(msg.reply_to_message_id) == 0 then
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{ 
+{text = '⌔ 𝖠𝗹𝗲𝘅 𝖳𝗲𝗮𝗺 .', url="https://t.me/U9908"} 
+}, 
+} 
+local msgg = msg.id/2097152/0.5 
+return https.request("https://api.telegram.org/bot"..Token.."/sendVoice?chat_id="..msg.chat_id.."&voice=https://t.me/TwTTMTKK/"..math.random(3,19).."&caption="..URL.escape("⌔ تم اختيار السؤال لك").."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
 end
 
-if text == "متحركه" or text == "مت" then 
 
-Abs = math.random(2,1075); 
-
-local Text ='*‎⌔ تم اختيار المتحركه لك*'
-
-local MsgId = msg.id/2097152/0.5
-
-local MSGID = string.gsub(MsgId,'.0','')
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/GifDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MSGID.."&parse_mode=markdown")
+if msg.content.text then 
+if text == "متحركه" or text == "متحركة" and tonumber(msg.reply_to_message_id) == 0 then
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{ 
+{text = '⌔ 𝖠𝗹𝗲𝘅 𝖳𝗲𝗮𝗺 .', url="https://t.me/U9908"} 
+}, 
+} 
+local msgg = msg.id/2097152/0.5 
+return https.request("https://api.telegram.org/bot"..Token.."/sendVoice?chat_id="..msg.chat_id.."&voice=https://t.me/GifDavid/"..math.random(2,1075).."&caption="..URL.escape("⌔ تم اختيار المتحركه لك").."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
 end
 if text and text:match("^مسح (.*)$") and msg.reply_to_message_id == 0 then
 local TextMsg = text:match("^مسح (.*)$")
@@ -9352,23 +9391,7 @@ else
 return LuaTele.sendText(msg_chat_id,msg_id,'*● لا توجد صوره ف حسابك*',"md",true) 
 end
 end
-end
-
-if text == "مبرمج السورس" or text == "مطور السورس" or text == "وين المبرمج" or text == "المبرمج" or text == "˓ مبرمج السورس ⌔" then 
-Text = [[
-⌔︙Dev Name : [𝖰𝖽𝗈𝖲𝗁](https://t.me/vv3oo)
-⌔︙User : ( @vv3oo )
-⌔︙Bio : 𝖣َ𝗈 𝖭𝗈𝗍 𝖯َ𝖺𝗇𝗂𝖼 @DD4EE .
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = 'Dev Source !', url = "https://t.me/vv3oo"}
-},
-}
-local MsgId = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/vv3oo&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
-elseif text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'source' then
+if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'source' then
 photo = "https://t.me/U9908"
 local T =[[⌔︙Welcome To Source Alex team .
 ]]
@@ -10061,12 +10084,20 @@ Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'مد','ر
 Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'من', 'رفع منشئ')
 Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'اس', 'رفع منشئ اساسي')
 Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'مط', 'رفع مطور')
-Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'غ', 'غنيلي')
 Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'ر', 'الرابط')
 Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'رد', 'اضف رد')
 Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'تك', 'تنزيل الكل')
 Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'رس', 'مسح رسائلي')
 Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'سح', 'مسح سحكاتي')
+Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'غ', 'غنيلي')
+Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'صو', 'صوره')
+Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'ان', 'انمي')
+Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'مت', 'متحركه')
+Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'را', 'راب')
+Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'ري', 'ريمكس')
+Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'ش', 'شعر')
+Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'كتمت', 'كت متحركه')
+Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'مت', 'متحركه')
 Redis:set(LKJHG.."LKJHG:Get:Reides:Commands:Group"..msg_chat_id..":"..'ثانوي', 'رفع مطور ثانوي')
 return LuaTele.sendText(msg_chat_id,msg_id,[[*
 ⌔︙تم ترتيب الاوامر بالشكل التالي 
@@ -10085,7 +10116,6 @@ return LuaTele.sendText(msg_chat_id,msg_id,[[*
 ⌔︙رفع ادمن - اد
 ⌔︙رفع مميز - م
 ⌔︙اضف رد - رد
-⌔︙غنيلي - غ
 ⌔︙الرابط - ر
 ⌔︙ايدي - ا
 *]],"md")
