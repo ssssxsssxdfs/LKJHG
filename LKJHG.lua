@@ -1247,7 +1247,7 @@ end
 print('This is Voice')
 end 
 
-if msg.content.luatele == "messageSticker" and not msg.Distinguished then  -- الملصقات
+if (msg.content.luatele == "messageSticker" or msg.content.luatele == "messageUnsupported")and not msg.Distinguished then  -- الملصقات
 local Sticker_Group = Redis:get(LKJHG.."LKJHG:Lock:Sticker"..msg_chat_id)
 if Sticker_Group == "del" then
 LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
@@ -2643,7 +2643,7 @@ local TotalEdit = Redis:get(LKJHG..'LKJHG:Num:Message:Edit'..msg_chat_id..msg.se
 local TotalMsgT = Total_message(TotalMsg) 
 local NumberGames = Redis:get(LKJHG.."LKJHG:Num:Add:Games"..msg.chat_id..msg.sender.user_id) or 0
 local NumAdd = Redis:get(LKJHG.."LKJHG:Num:Add:Memp"..msg.chat_id..":"..msg.sender.user_id) or 0
-local Texting = {'ملاك وناسيك بكروبنه😟',"حلغوم والله☹️ ","اطلق صوره🐼❤️","كيكك والله🥺","لازك بيها غيرها عاد😒",}
+local Texting = {'ملاك وناسيك بكروبنه',"حلغوم والله ","اصلا قدوش احلا منك","كيكك والله","لازك بيها غيرها عاد",}
 local Description = Texting[math.random(#Texting)]
 if UserInfo.username then
 UserInfousername = '@'..UserInfo.username..''
@@ -5452,14 +5452,12 @@ local texting = {"اخر افلام شاهدتها",
 "اخر اغنية سمعتها ?", 
 "تكلم عن نفسك", 
 "ليه انت مش سالك", 
-"ما هيا عيوب سورس اليكس؟ ", 
 "اخر كتاب قرآته", 
 "روايتك المفضله ?", 
 "اخر اكله اكلتها", 
 "اخر كتاب قرآته", 
-"ليش حسين ذكي؟ ", 
+"ليش قدوش ذكي؟ ", 
 "افضل يوم ف حياتك", 
-"ليه مضيفتش كل جهاتك", 
 "حكمتك ف الحياه", 
 "لون عيونك", 
 "كتابك المفضل", 
@@ -5467,17 +5465,14 @@ local texting = {"اخر افلام شاهدتها",
 "علاقتك مع اهلك", 
 " ما السيء في هذه الحياة ؟ ", 
 "أجمل شيء حصل معك خلال هذا الاسبوع ؟ ", 
-"سؤال ينرفزك ؟ ", 
-" هل يعجبك سورس اليكس؟؟ ", 
-" اكثر ممثل تحبه ؟ ", 
+"سؤال ينرفزك ؟ ",  
+" اكثر ممثل/ة تحبه ؟ ", 
 "قد تخيلت شي في بالك وصار ؟ ", 
 "شيء عندك اهم من الناس ؟ ", 
 "تفضّل النقاش الطويل او تحب الاختصار ؟ ", 
 "وش أخر شي ضيعته؟ ", 
-"اي رايك في سورس اليكس؟ ", 
 "كم مره حبيت؟ ", 
 " اكثر المتابعين عندك باي برنامج؟", 
-" آخر مره ضربت عشره كانت متى ؟", 
 " نسبه الندم عندك للي وثقت فيهم ؟", 
 "تحب ترتبط بكيرفي ولا فلات؟", 
 " جربت شعور احد يحبك بس انت مو قادر تحبه؟", 
@@ -5630,7 +5625,6 @@ local texting = {"اخر افلام شاهدتها",
   "الصداقة ولا الحب؟ ",
 "الصداقة ولا الحب؟ ",
   "الغيرة الزائدة شك؟ ولا فرط الحب؟ ",
-    "هل انت دي تويت باعت باندا؟ ",
   "قد حبيت شخصين مع بعض؟ وانقفطت؟ ",
   "وش أخر شي ضيعته؟ ",
   "قد ضيعت شي ودورته ولقيته بيدك؟ ",
@@ -5688,7 +5682,6 @@ local texting = {"اخر افلام شاهدتها",
 "تتوقع إنك بتتزوج اللي تحبه؟ ",
   "ما هو أمنيتك؟ ",
   "وين تشوف نفسك بعد خمس سنوات؟ ",
-  "هل انت حرامي تويت بتعت باندا؟ ",
   "لو خيروك تقدم الزمن ولا ترجعه ورا؟ ",
   "لعبة قضيت وقتك فيه بالحجر المنزلي؟ ",
   "تحب تطق الميانة ولا ثقيل؟ ",
@@ -5737,7 +5730,6 @@ local texting = {"اخر افلام شاهدتها",
   "انسان م تحب تتعامل معاه ابداً ؟ ",
   "شيء بسيط تحتفظ فيه؟ ",
   "فُرصه تتمنى لو أُتيحت لك ؟ ",
-   "لي باندا ناك اليكس؟ ",
   "شيء مستحيل ترفضه ؟. ",
   "لو زعلت بقوة وش بيرضيك ؟ ",
   "تنام بـ اي مكان ، ولا بس غرفتك ؟ ",
@@ -5767,6 +5759,144 @@ local texting = {"اخر افلام شاهدتها",
 } 
 return LuaTele.sendText(msg_chat_id,msg_id,texting[math.random(#texting)],'md')
 end
+end
+if text == "تاكات"or text == "@" then
+if Redis:get(LKJHG.."LKJHG:Status:Games"..msg.chat_id) then
+local texting = {"@ݪہ³ اسمك الكامل ؟", 
+  "@ݪہ² بيت شعر ع ذوقك",
+  "@ݪہ⁴ مقطع من اغنيه تحبهه ؟",
+  "@ݪہ⁶ ممكن ابوسك ؟ ",
+   "@ݪہ⁷ اعزمنه على العشه !؟ ",
+"@ݪہ⁵ اني شنو بنسبه الك ؟",
+  "@ݪہ⁴ كله شلابس ؟ ",
+  "@ݪہ⁴ تزوجني اخوك/اختك ؟ ",
+  "@ݪہ² تشتريلي رانج ونفتر سوا ؟ ",
+  "@ݪہ⁵ كله اذا دخلت النار تجي وياي ؟ ",
+  "@ݪہ³ كله تعال اتنفسك صدكني مخنوك ",
+  "@ݪہ⁶ كله ننام سوا بفراش واحد ؟ ",
+  "@ݪہ¹⁵ كله اسألني سؤال ؟",
+  "@ݪہ⁹ كله شلون تعرفت عليه ؟ ",
+  "@ݪہ¹⁴ كله نطيني بوسه ؟ ",
+  "@ݪہ¹² كله غنيلي صوتك عافية ؟ ",
+"@ݪہ¹² كله حن واني احن ): ",
+  "@ݪہ² كله غنيلي ؟",
+  "@ݪہ⁵ كله نتزوج ؟ ",
+  "@ݪہ¹⁰ كله مشتاقلي؟",
+  "@ݪہ⁹ كله نطيني بوسةة ؟",
+  "@ݪہ¹ كله سكرين لخاصك ؟ ",
+  "@ݪہ⁷ كله نتزوج ؟ ",
+  "@ݪہ⁵ كله نطيني بوسةة",
+  "@ݪہ⁶ كله نرتبط بالسر ؟ ",
+  "@ݪہ⁶ كله اذا متت تجي بفاتحتي؟ ",
+  "@ݪہ³ كله كامش عليك فضيحةة (:",
+} 
+return LuaTele.sendText(msg_chat_id,msg_id,texting[math.random(#texting)],'md')
+end
+end
+if text == "مسح الرتب" or text == "تصفيه" then    
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*•︙هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '✫︙ مسح المميزين ', data = msg.sender.user_id..'/'.. 'DelDistinguished'},{text = '✫︙مسح الادمنيه', data = msg.sender.user_id..'/'.. 'Addictive'},
+},
+{
+{text = '✫︙مسح المدراء', data = msg.sender.user_id..'/'.. 'Managers'},{text = '✫︙مسح المنشئين', data = msg.sender.user_id..'/'.. 'Originators'},
+},
+{
+{text = '✫︙مسح الاساسين ', data =msg.sender.user_id..'/'.. 'TheBasics'},
+},
+{
+{text = '✫  إخفاء الأمر ', data =msg.sender.user_id..'/'.. 'delAmr'}
+},
+}
+}
+return LuaTele.sendText(msg_chat_id, msg_id, '•︙يمكنك من هنا التحكم في رتب المجموعة ', 'md', false, false, false, false, reply_markup)
+ end  
+ 
+ if text == 'تغيير الايدي' or text == 'تغير الايدي' then
+if not msg.Originators then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*•︙هذا الامر يخص { '..Controller_Num(5)..' }* ',"md",true)  
+end
+local List = { 
+[[
+ ∵ USERNAME . #username
+ ∵ STAST . #stast
+ ∵ ID . #id
+ ∵ MSGS . #msgs
+]],
+[[
+ ∵ USERNAME . #username
+ ∵ STAST . #stast
+ ∵ ID . #id
+ ∵ MSGS . #msgs
+]],
+[[
+: 𝖴ِᥱ᥉ : #username .
+: Iَժ : #id .
+: Sƚِᥲ : #stast .
+: 𝖬⁪⁬⁮᥉َ𝗀 : #msgs .
+]],
+[[
+َ› Msgs : #msgs .🦇
+َ› ID : #id .🦇
+َ› Stast : #stast .🦇
+َ› UserName : #username .🦇
+]],
+[[
+☁️ . USERNAME . #username
+☁️ . STAST . #stast
+☁️ . ID . #id
+☁️ . MSGS . #msgs
+]],
+[[
+ . USERNAME . #username
+ . STAST . #stast
+ . ID . #id
+ . MSGS . #msgs
+]],
+[[
+  USERNAME . #username
+  STAST . #stast
+  ID . #id
+  MSGS . #msgs
+]],
+[[
+◜⛓️𝗨S𝗘ِr #username 🕷 .  
+◜⛓️𝗠sِG  #msgs   .
+◜⛓️𝗦𝗧 #stast  .
+◜⛓️𝗜d  #id 🕸 .
+]],
+[[
+ . USERNAME . #username
+ . STAST . #stast
+ . ID . #id
+ . MSGS . #msgs
+]],
+[[
+˛ 𝗎!𝗌 : #username ٰ⛓️ '.
+˛ 𝗆!𝗀 #msgs .
+˛ 𝗌!𝗍 : #stast .
+˛𝗂!𝖽 : #id ⛓️ '.
+]],
+[[
+َ› Msgs : #msgs .🦇
+َ› ID : #id .🦇
+َ› Stast : #stast .🦇
+َ› UserName : #username .🦇
+]],
+[[
+: 𝖴ِᥱ᥉ : #username .
+: Iَժ : #id .
+: Sƚِᥲ : #stast .
+: 𝖬⁪⁬⁮᥉َ𝗀 : #msgs .
+]]} 
+local Text_Rand = List[math.random(#List)] 
+Redis:set(LKJHG.."LKJHG:Set:Id:Group"..msg.chat_id,Text_Rand)
+return LuaTele.sendText(msg_chat_id,msg_id, '•︙تم التغيير ارسل ايدي لعرض الايدي الجديد',"md",true)  
 end
 if text == 'المشرفين'or text == 'تاك للمشرفين'then
 if not msg.Managers then
@@ -5977,7 +6107,63 @@ end
 end
 LuaTele.sendText(msg_chat_id,msg_id,listall,"md",true)  
 end
-
+if text == "قفل الفشار" then 
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
+end
+Redis:set(LKJHG.."LKJHG:Lock:farsia"..msg_chat_id,true) 
+LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"⌔︙تم قفـل الفشار").Lock,"md",true)  
+return false
+end 
+if text == "فتح الفشار" then 
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
+end
+Redis:del(LKJHG.."LKJHG:Lock:farsia"..msg_chat_id)  
+LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"⌔︙تم فتح الفشار").unLock,"md",true)  
+return false
+end 
+if text and (text:match("كسي‍") or text:match("كس") or 
+text:match("گحبه") or
+text:match("كحبة") or
+text:match("مناويج") or
+text:match("نيج") or
+text:match("كحبه") or
+text:match("شرموطه") or
+text:match("منيوك") or
+text:match("عيوره") or
+text:match("ها الو العيوره") or
+text:match("كسخالتك") or text:match("كسمك") or text:match("عير")) and not msg.Distinguished then 
+local phshar_Group = Redis:get(LKJHG.."LKJHG:Lock:farsia"..msg_chat_id)
+if phshar_Group then
+return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
+end
+end
+if text == "قفل الكفر" then 
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
+end
+Redis:set(LKJHG.."LKJHG:Lock:farsia"..msg_chat_id,true) 
+LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"⌔︙تم قفـل الكفران").Lock,"md",true)  
+return false
+end 
+if text == "فتح الكفر" then 
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
+end
+Redis:del(LKJHG.."LKJHG:Lock:farsia"..msg_chat_id)  
+LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"⌔︙تم فتح الكفران").unLock,"md",true)  
+return false
+end 
+if text and (text:match("خرب الله") or text:match("خربالله") or 
+text:match("خرب محمد") or
+text:match("خرب دينك") or
+text:match("عير بربك") or text:match("كسربك") or text:match(" كس ربك")) and not msg.Distinguished then 
+local phshar_Group = Redis:get(LKJHG.."LKJHG:Lock:farsia"..msg_chat_id)
+if phshar_Group then
+return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
+end
+end
 if text == "قفل الدردشه" then 
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
@@ -7903,7 +8089,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = 't.me/U9908'}, 
 },
 }
 }
@@ -8486,18 +8672,40 @@ end
 Redis:del(LKJHG.."LKJHG:Set:Id:Group"..msg.chat_id)
 return LuaTele.sendText(msg_chat_id,msg_id, '⌔︙تم ازالة كليشة الايدي ',"md",true)  
 end
-
+if text == "@all" or text == "تاك عام" or text == "all" or text == "a" or text == "تعو" or text == "A" then 
+if not msg.Managers then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
+end
+local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 200) 
+x = 0 
+tags = 0 
+local list = Info_Members.members 
+for k, v in pairs(list) do 
+local UserInfo = LuaTele.getUser(v.member_id.user_id) 
+if x == 5 or x == tags or k == 0 then 
+tags = x + 5 
+listall = "" 
+end 
+x = x + 1 
+if UserInfo.first_name ~= '' then 
+listall = listall.." ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")," 
+end 
+if x == 5 or x == tags or k == 0 then 
+LuaTele.sendText(msg_chat_id,msg_id,listall,"md",true)
+end
+end
+end
 
 if msg.content.text then 
 if text == "غنيلي" or text == "غني" and tonumber(msg.reply_to_message_id) == 0 then
 keyboard = {}  
 keyboard.inline_keyboard = { 
 {
-{text = '⌔ 𝖠𝗹𝗲𝘅 𝖳𝗲𝗮𝗺 .', url="https://t.me/U9908"}
+{text = '- A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url="https://t.me/U9908"}
 },
 }
 local msgg = msg.id/2097152/0.5
-return https.request("https://api.telegram.org/bot"..Token.."/sendVoice?chat_id="..msg.chat_id.."&voice=https://t.me/TEAMSUL/"..math.random(3,140).."&caption="..URL.escape("⌔ تم اختيار الاغنيه لك").."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return https.request("https://api.telegram.org/bot"..Token.."/sendVoice?chat_id="..msg.chat_id.."&voice=https://t.me/MMMMSY/"..math.random(3,337).."&caption="..URL.escape("⌔ تم اختيار الاغنيه لك").."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 
@@ -8507,7 +8715,7 @@ if text == "صوره" or text == "صورة" and tonumber(msg.reply_to_message_id
 keyboard = {}  
 keyboard.inline_keyboard = { 
 {
-{text = '⌔ 𝖠𝗹𝗲𝘅 𝖳𝗲𝗮𝗺 .', url="https://t.me/U9908"} 
+{text = '- A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url="https://t.me/U9908"} 
 }, 
 } 
 local msgg = msg.id/2097152/0.5 
@@ -8521,7 +8729,7 @@ if text == "انمي" or text == "ان" and tonumber(msg.reply_to_message_id) ==
 keyboard = {}  
 keyboard.inline_keyboard = { 
 { 
-{text = '⌔ 𝖠𝗹𝗲𝘅 𝖳𝗲𝗮𝗺 .', url="https://t.me/U9908"} 
+{text = '- A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url="https://t.me/U9908"} 
 }, 
 } 
 local msgg = msg.id/2097152/0.5 
@@ -8535,11 +8743,11 @@ if text == "شعر" or text == "شع" and tonumber(msg.reply_to_message_id) == 0
 keyboard = {}  
 keyboard.inline_keyboard = { 
 { 
-{text = '⌔ 𝖠𝗹𝗲𝘅 𝖳𝗲𝗮𝗺 .', url="https://t.me/U9908"} 
+{text = '- A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url="https://t.me/U9908"} 
 }, 
 } 
 local msgg = msg.id/2097152/0.5 
-return https.request("https://api.telegram.org/bot"..Token.."/sendVoice?chat_id="..msg.chat_id.."&voice=https://t.me/AlexBesso/"..math.random(3,104).."&caption="..URL.escape("⌔ تم اختيار الشعر لك").."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+return https.request("https://api.telegram.org/bot"..Token.."/sendVoice?chat_id="..msg.chat_id.."&voice=https://t.me/AlexBesso/"..math.random(3,206).."&caption="..URL.escape("⌔ تم اختيار الشعر لك").."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end 
 end
 
@@ -8549,7 +8757,7 @@ if text == "راب" or text == "را" and tonumber(msg.reply_to_message_id) == 0
 keyboard = {}  
 keyboard.inline_keyboard = { 
 { 
-{text = '⌔ 𝖠𝗹𝗲𝘅 𝖳𝗲𝗮𝗺 .', url="https://t.me/U9908"} 
+{text = '- A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url="https://t.me/U9908"} 
 }, 
 } 
 local msgg = msg.id/2097152/0.5 
@@ -8559,11 +8767,11 @@ end
 
 
 if msg.content.text then 
-if text == "ريمكس" or text == "ريم" and tonumber(msg.reply_to_message_id) == 0 then
+if text == "ريمكس" or text == "ريم" or text == "ري"and tonumber(msg.reply_to_message_id) == 0 then
 keyboard = {}  
 keyboard.inline_keyboard = { 
 { 
-{text = '⌔ 𝖠𝗹𝗲𝘅 𝖳𝗲𝗮𝗺 .', url="https://t.me/U9908"} 
+{text = '- A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url="https://t.me/U9908"} 
 }, 
 } 
 local msgg = msg.id/2097152/0.5 
@@ -8577,7 +8785,7 @@ if text == "كت متحركه" or text == "كت متحركة" and tonumber(msg.r
 keyboard = {}  
 keyboard.inline_keyboard = { 
 { 
-{text = '⌔ 𝖠𝗹𝗲𝘅 𝖳𝗲𝗮𝗺 .', url="https://t.me/U9908"} 
+{text = '- A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url="https://t.me/U9908"} 
 }, 
 } 
 local msgg = msg.id/2097152/0.5 
@@ -8591,7 +8799,7 @@ if text == "متحركه" or text == "متحركة" and tonumber(msg.reply_to_me
 keyboard = {}  
 keyboard.inline_keyboard = { 
 { 
-{text = '⌔ 𝖠𝗹𝗲𝘅 𝖳𝗲𝗮𝗺 .', url="https://t.me/U9908"} 
+{text = '- A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url="https://t.me/U9908"} 
 }, 
 } 
 local msgg = msg.id/2097152/0.5 
@@ -9408,6 +9616,7 @@ keyboard.inline_keyboard = {
 local MsgId = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/vv3oo&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown")
 end
+
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'source' then
 photo = "https://t.me/U9908"
 local T =[[⌔︙Welcome To Source Alex team .
@@ -9415,7 +9624,7 @@ local T =[[⌔︙Welcome To Source Alex team .
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = "https://t.me/U9908"},{text = 'A𝗹𝗲𝘅 𝖴𝗉𝖽𝖺𝖳𝖾𝖲', url = "https://t.me/U9907"}
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = "https://t.me/U9908"},{text = 'A𝗅𝖾x 𝖴𝗉𝖽𝖺𝖳𝖾𝖲', url = "https://t.me/U9907"}
 },
 {
 {text = '𝗧𝘄𝘀 Source', url = "https://t.me/vv3vvbot"}
@@ -9441,25 +9650,24 @@ data = {
 {text = ' 𝟑 ', data = msg.sender.user_id..'/help3'}, {text = ' 𝟒 ', data = msg.sender.user_id..'/help4'}, 
 },
 {
-{text = ' 𝟓 ', data = msg.sender.user_id..'/help5'}, {text = ' الالعاب ', data = msg.sender.user_id..'/help6'}, {text = ' التسليه ', data = msg.sender.user_id..'/help7'}, 
+{text = ' 𝟓 ', data = msg.sender.user_id..'/help5'}, {text = '', data = msg.sender.user_id..'/help6'}, {text = '', data = msg.sender.user_id..'/help7'}, 
 },
 {
-{text = ' اوامر القفل / الفتح ', data = msg.sender.user_id..'/NoNextSeting'}, {text = ' اوامر التعطيل / التفعيل ', data = msg.sender.user_id..'/listallAddorrem'}, 
+{text = '- اوامر القفل .', data = msg.sender.user_id..'/NoNextSeting'}, {text = '- اوامر التعطيل . ', data = msg.sender.user_id..'/listallAddorrem'}, 
 },
 {
-{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = 't.me/U9908'}, 
 },
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id, [[*
-⌔ توجد ← 6 اوامر في البوت
-━─━─━─x─━─━─━
-⌔ ( 1 ) ←  الحمايه •
-⌔ ( 2 ) ←  الادمنيه •
-⌔ ( 3 ) ←  المدراء •
-⌔ ( 4 ) ←  المنشئين •
-⌔ ( 5 ) ←  مطورين البوت •
-⌔ ( 6 ) ←  التسليه •
+⌔ قائمة الاوامر 
+— — — — — — — — — —
+- 1 ~⪼ اوامر الحماية
+- 2 ~⪼  الادمنية
+- 3 ~⪼  المدراء 
+- 4 ~⪼  المنشئين + المطور
+- 5 ~⪼  اوامر الاخرى
 *]],"md",false, false, false, false, reply_markup)
 elseif text == 'م1' then
 if not msg.Addictive then
@@ -9476,7 +9684,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = 'Alex Team', url = 't.me/U9908'}, 
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = 't.me/U9908'}, 
 },
 }
 }
@@ -9496,7 +9704,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = 'Alex Team', url = 't.me/U9908'}, 
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = 't.me/U9908'}, 
 },
 }
 }
@@ -9516,7 +9724,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = 'Alex Team', url = 't.me/U9908'}, 
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = 't.me/U9908'}, 
 },
 }
 }
@@ -9536,7 +9744,7 @@ data = {
 {text = 'قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = 'Alex Team', url = 't.me/U9908'}, 
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = 't.me/U9908'}, 
 },
 }
 }
@@ -9556,7 +9764,7 @@ data = {
 {text = 'قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = 'Alex Team', url = 't.me/U9908'}, 
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = 't.me/U9908'}, 
 },
 }
 }
@@ -9576,7 +9784,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = 'Alex Team', url = 't.me/U9908'}, 
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = 't.me/U9908'}, 
 },
 }
 }
@@ -9596,7 +9804,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = 'Alex Team', url = 't.me/U9908'}, 
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = 't.me/U9908'}, 
 },
 }
 }
@@ -9642,10 +9850,10 @@ local NamesBot = (Redis:get(LKJHG.."LKJHG:Name:Bot") or "ليكس")
 local NameBots = {
 "وياك "..NamesBot.. " تفضل ؟",
 "امر خدمه ؟",
-"بحضنك سيد ",
-"عندي اسم وعيونك",
+"شتريد ؟ ",
+"مو ذبحتني كافي ؟",
 "يروحح "..NamesBot,
-'هاا سيدد'
+'يمك بس احجي'
 }
 return LuaTele.sendText(msg_chat_id,msg_id, NameBots[math.random(#NameBots)],"md",true)  
 end
@@ -10991,19 +11199,19 @@ data = {
 {text = ' 𝟑 ', data = IdUser..'/help3'}, {text = ' 𝟒 ', data = IdUser..'/help4'}, 
 },
 {
-{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = ' الالعاب ', data = IdUser..'/help6'}, {text = ' التسليه ', data = IdUser..'/help7'}, 
+{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = '', data = IdUser..'/help6'}, {text = '', data = IdUser..'/help7'}, 
 },
 {
 {text = ' القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = 't.me/U9908'}, 
 },
 }
 }
 local TextHelp = [[*
 ⌔ اوامر الحمايه  
-━─━─━─x─━─━─━
+— — — — — — — — — —
 ⌔ ( قفل ، فتح ← الامر )
 ⌔ ( تستطيع قفل )
 ⌔ ( بالتقيد ، بالطرد ، بالكتم )
@@ -11046,19 +11254,19 @@ data = {
 {text = ' 𝟑 ', data = IdUser..'/help3'}, {text = ' 𝟒 ', data = IdUser..'/help4'}, 
 },
 {
-{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = ' الالعاب ', data = IdUser..'/help6'}, {text = ' التسليه ', data = IdUser..'/help7'}, 
+{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = '', data = IdUser..'/help6'}, {text = '', data = IdUser..'/help7'}, 
 },
 {
 {text = ' القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = 't.me/U9908'}, 
 },
 }
 }
 local TextHelp = [[*
-⌔ اوامر ادمنية المجموعه 
-━─━─━─x─━─━─━
+⌔ اوامر الادمنية  
+— — — — — — — — — —
 ⌔ ( رفع، تنزيل ، مميز )
 ⌔ ( تاك للكل ، عدد الكروب )
 ⌔ ( كتم ، حظر ، طرد ، تقيد )
@@ -11099,19 +11307,19 @@ data = {
 {text = ' 𝟑 ', data = IdUser..'/help3'}, {text = ' 𝟒 ', data = IdUser..'/help4'}, 
 },
 {
-{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = ' الالعاب ', data = IdUser..'/help6'}, {text = ' التسليه ', data = IdUser..'/help7'}, 
+{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = '', data = IdUser..'/help6'}, {text = '', data = IdUser..'/help7'}, 
 },
 {
 {text = ' القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = 't.me/U9908'}, 
 },
 }
 }
 local TextHelp = [[*
-⌔ اوامر المدراء في المجموعه
-━─━─━─x─━─━─━
+⌔ اوامر المدراء  
+— — — — — — — — — —
 ⌔ ( رفع ، تنزيل ← ادمن )
 ⌔ ( الادمنيه )
 ⌔ ( رفع، كشف ← القيود )
@@ -11147,22 +11355,21 @@ data = {
 {text = ' 𝟑 ', data = IdUser..'/help3'}, {text = ' 𝟒 ', data = IdUser..'/help4'}, 
 },
 {
-{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = ' الالعاب ', data = IdUser..'/help6'}, {text = ' التسليه ', data = IdUser..'/help7'}, 
+{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = '', data = IdUser..'/help6'}, {text = '', data = IdUser..'/help7'}, 
 },
 {
 {text = ' القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = 't.me/U9908'}, 
 },
 }
 }
 local TextHelp = [[*
-⌔ اوامر المنشئ الاساسي
-━─━─━─x─━─━─━
+اوامر المطور + المنشئ الاساسي
+— — — — — — — — — —
 ⌔ ( رفع ، تنزيل ←{ منشئ }
 ⌔ ( المنشئين ، مسح المنشئين
-━─━─━─x─━─━─━
 ⌔ ( اوامر المنشئ المجموعه )
 ⌔ ( رفع ، تنزيل ، مدير )
 ⌔ ( المدراء ، مسح المدراء )
@@ -11170,6 +11377,24 @@ local TextHelp = [[*
 ⌔ ( اضف مجوهرات ، بالرد او الايدي )
 ⌔ ( اضف ، حذف ، امر )
 ⌔ ( الاوامر المضافه ، مسح الاوامر المضافه )
+⌔ اوامر المطور الاساسي  
+⌔ ( حظر عام ، الغاء العام )
+⌔ ( اضف ، حذف  ، مطور )
+⌔ ( قائمه العام ، مسح قائمه العام )
+⌔ ( المطورين ، مسح المطورين )
+⌔ ( اضف ، حذف ، رد للكل )
+⌔ ( وضع ، حذف  ، كليشه المطور )
+⌔ ( مسح ردود المطور ، ردود المطور )
+⌔ ( تحديث ،  تحديث السورس )
+⌔ ( تعين عدد الاعضاء ، العدد )
+⌔ ( تفعيل ، تعطيل  { الاوامر التاليه )
+⌔ ( البوت الخدمي ، المغادرة ، الاذاعه )
+⌔ اوامر المطور في البوت ↓
+⌔ ( تفعيل ، تعط ، منشئ اساسي )
+⌔ ( مسح الاساسين ، المنشئين الاساسين )
+⌔ ( غادر ، غادر ، والايدي )
+⌔ ( اذاعه ، اذاعه بالتوجيه ، اذاعه بالتثبيت )
+⌔ ( اذاعه خاص ، اذاعه خاص بالتوجيه )
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -11186,38 +11411,29 @@ data = {
 {text = ' 𝟑 ', data = IdUser..'/help3'}, {text = ' 𝟒 ', data = IdUser..'/help4'}, 
 },
 {
-{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = ' الالعاب ', data = IdUser..'/help6'}, {text = ' التسليه ', data = IdUser..'/help7'}, 
+{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = '', data = IdUser..'/help6'}, {text = '', data = IdUser..'/help7'}, 
 },
 {
 {text = ' القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = 't.me/U9908'}, 
 },
 }
 }
 local TextHelp = [[*
-⌔ اوامر المطور الاساسي  
-━─━─━─x─━─━─━
-⌔ ( حظر عام ، الغاء العام )
-⌔ ( اضف ، حذف  ، مطور )
-⌔ ( قائمه العام ، مسح قائمه العام )
-⌔ ( المطورين ، مسح المطورين )
-⌔ ( اضف ، حذف ، رد للكل )
-⌔ ( وضع ، حذف  ، كليشه المطور )
-⌔ ( مسح ردود المطور ، ردود المطور )
-⌔ ( تحديث ،  تحديث السورس )
-⌔ ( تعين عدد الاعضاء ، العدد )
-⌔ ( تفعيل ، تعطيل  { الاوامر التاليه )
-⌔ ( البوت الخدمي ، المغادرة ، الاذاعه )
-━─━─━─x─━─━─━
-⌔ اوامر المطور في البوت ↓
-━─━─━─x─━─━─━
-⌔ ( تفعيل ، تعط ، منشئ اساسي )
-⌔ ( مسح الاساسين ، المنشئين الاساسين )
-⌔ ( غادر ، غادر ، والايدي )
-⌔ ( اذاعه ، اذاعه بالتوجيه ، اذاعه بالتثبيت )
-⌔ ( اذاعه خاص ، اذاعه خاص بالتوجيه ) 
+قائمه الاوامر الاخرى  :-
+ — — — — — — — — — —
+1-  العكس ~⪼ لعبه الكلمات المعاكسه
+2-  معاني ~⪼ لعبه المعاني
+3-  حزوره ~⪼ لعبه الحزازير
+4- الاسرع ~⪼ لعبه الاسرع 
+5-  امثله ~⪼ لعبه المثال
+6- المختلف ~⪼ لعبه الاختلافات
+7- سمايلات ~⪼ لعبه سمايل
+8- روليت ~⪼ لعبه الحض
+9- تخمين ~⪼ لعبه خمن
+10 - غنيلي ، شعر ، فلم ، راب ، انمي ، صوره ، متحركه ، ريمكس  ، كت متحركه
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -11234,13 +11450,13 @@ data = {
 {text = ' 𝟑 ', data = IdUser..'/help3'}, {text = ' 𝟒 ', data = IdUser..'/help4'}, 
 },
 {
-{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = ' الالعاب ', data = IdUser..'/help6'}, {text = ' التسليه ', data = IdUser..'/help7'}, 
+{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = '', data = IdUser..'/help6'}, {text = '', data = IdUser..'/help7'}, 
 },
 {
 {text = ' القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = 't.me/U9908'}, 
 },
 }
 }
@@ -11251,7 +11467,7 @@ local TextHelp = [[*
 ⌔ ( لعبة الامثله ، امثله )
 ⌔ ( لعبة العكس ، العكس )
 ⌔ ( لعبة الحزوره ، حزوره )
-⌔ ( لعبة المعاني ، معاني
+⌔ ( لعبة المعاني ، معاني )
 ⌔ ( لعبة البات ، بات )
 ⌔ ( لعبة التخمين ، خمن )
 ⌔ ( لعبه الاسرع ، الاسرع )
@@ -11275,13 +11491,13 @@ data = {
 {text = ' 𝟑 ', data = IdUser..'/help3'}, {text = ' 𝟒 ', data = IdUser..'/help4'}, 
 },
 {
-{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, {text = '{ التسليه }', data = IdUser..'/help7'}, 
+{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = '', data = IdUser..'/help6'}, {text = '', data = IdUser..'/help7'}, 
 },
 {
 {text = ' القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = '𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺', url = 't.me/U9908'}, 
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = 't.me/U9908'}, 
 },
 }
 }
@@ -11313,26 +11529,24 @@ data = {
 {text = ' 𝟑 ', data = IdUser..'/help3'}, {text = ' 𝟒 ', data = IdUser..'/help4'}, 
 },
 {
-{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = ' الالعاب ', data = IdUser..'/help6'}, {text = ' التسليه ', data = IdUser..'/help7'}, 
+{text = ' 𝟓 ', data = IdUser..'/help5'}, {text = '', data = IdUser..'/help6'}, {text = '', data = IdUser..'/help7'}, 
 },
 {
-{text = ' اوامر القفل / الفتح ', data = IdUser..'/NoNextSeting'}, {text = ' اوامر التعطيل / التفعيل ', data = IdUser..'/listallAddorrem'}, 
+{text = '- اوامر القفل .', data = IdUser..'/NoNextSeting'}, {text = '- اوامر التعطيل .', data = IdUser..'/listallAddorrem'}, 
 },
 {
-{text = ' 𝖠𝗹𝗲𝘅 𝘁𝗲𝗮𝗺 ', url = 't.me/U9908'}, 
+{text = ' - A𝗅𝖾x 𝖳𝖾𝖺𝗆 .', url = 't.me/U9908'}, 
 },
 }
 }
 local TextHelp = [[*
-⌔ توجد ← 6 اوامر في البوت
-━─━─━─x─━─━─━
-⌔ ( 1 ) ←  الحمايه •
-⌔ ( 2 ) ←  الادمنيه •
-⌔ ( 3 ) ←  المدراء •
-⌔ ( 4 ) ←  المنشئين •
-⌔ ( 5 ) ←  مطورين البوت •
-⌔ ( 6 ) ←  التسليه •
-*]]
+⌔ قائمة الاوامر 
+ٴ— — — — — — — — — —
+- 1 ~⪼ اوامر الحماية
+- 2 ~⪼  الادمنية
+- 3 ~⪼  المدراء 
+- 4 ~⪼  المنشئين + المطور
+- 5 ~⪼  اوامر الاخرى*]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
 end
@@ -12284,7 +12498,7 @@ data = {
 {text = 'تعطيل اطردني', data = IdUser..'/'.. 'unmute_kickme'},{text = 'تفعيل اطردني', data = IdUser..'/'.. 'mute_kickme'},
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = ' القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
 {text = '- اخفاء الامر ', data =IdUser..'/'.. 'delAmr'}
@@ -12341,13 +12555,13 @@ data = {
 {text = GetSetieng(ChatId).flood, data = '&'},{text = 'التكرار : ', data =IdUser..'/'.. 'Status_flood'},
 },
 {
-{text = '- الرجوع ... ', data =IdUser..'/'.. 'NoNextSeting'}
+{text = '- رجوع ⬅️ ', data =IdUser..'/'.. 'NoNextSeting'}
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = ' القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = '- اخفاء الامر ', data =IdUser..'/'.. '/delAmr'}
+{text = 'اخفاء الامر ', data =IdUser..'/'.. '/delAmr'}
 },
 }
 }
@@ -12398,13 +12612,13 @@ data = {
 {text = GetSetieng(ChatId).lock_bots, data = '&'},{text = 'البوتات : ', data =IdUser..'/'.. 'Status_bots'},
 },
 {
-{text = '- التالي ... ', data =IdUser..'/'.. 'NextSeting'}
+{text = '➡️ التالي - ', data =IdUser..'/'.. 'NextSeting'}
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = 'القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = '- اخفاء الامر ', data =IdUser..'/'.. 'delAmr'}
+{text = ' اخفاء الامر ', data =IdUser..'/'.. 'delAmr'}
 },
 }
 }
